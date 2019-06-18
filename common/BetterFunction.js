@@ -113,7 +113,7 @@ var MyFunctions = {
     },
 
     /**
-     * 得到数组中出现频率最高的数字和频率
+     * 得到数组中出现频率最高的数字或字符串和频率
      * 返回一个对象
      * @param {*} arr 
      */
@@ -132,7 +132,7 @@ var MyFunctions = {
         for (var prop in records) {
             if (!result || records[prop] > result.frequency) {
                 result = {
-                    number: +prop,
+                    number: prop,
                     frequency: records[prop]
                 };
             }
