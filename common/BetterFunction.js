@@ -222,35 +222,14 @@ var MyFunctions = {
             }
         }
         return num;
+    },
+    /**
+     * 得到一个最小值到最大值之间的随机整数
+     * @param {*} min 最小值
+     * @param {*} max 最大值
+     */
+    getRandom: function (min, max) {
+        return Math.floor(Math.random() * (max + 1 - min) + min);
     }
 }
-
-var arr = [34, 6, 76, 32, 23, 4, 23, 41, 1];
-var num = MyFunctions.count(arr, MyFunctions.isPrime);
-console.log(num);
-
-// var elm = MyFunctions.find(arr, MyFunctions.isPrime);
-// console.log(elm);
-
-
-// var newArr = MyFunctions.filter(arr, MyFunctions.isPrime);
-
-// console.log(newArr);
-
-
-
-// var arr = [
-//     { name: "张三", age: 18, weight: 60 },
-//     { name: "李四", age: 15, weight: 70 },
-//     { name: "王五", age: 20, weight: 65 }
-// ];
-// MyFunctions.sort(arr, function(a, b){
-//     return a.age - b.age;
-// });
-
-// var arr = [3, 46, 2, 1, 5];
-// MyFunctions.sort(arr, function (a, b) {
-//     return b - a;
-// });
-// console.log(arr);
 
