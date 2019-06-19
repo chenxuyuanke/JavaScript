@@ -230,6 +230,38 @@ var MyFunctions = {
      */
     getRandom: function (min, max) {
         return Math.floor(Math.random() * (max + 1 - min) + min);
+    },
+    /**
+     * 根据出生年月日，计算年龄
+     * @param {*} year 
+     * @param {*} month 
+     * @param {*} day 
+     */
+    getAge: function (year, month, day) {
+        //得到当前日期
+        var now = new Date(2016, 1, 28);
+        var dec = now.getFullYear() - year;
+        //处理闰年
+        if (month === 2 && day === 29 && !this.isLeap(now.getFullYear())) {
+            day = 28;
+        }
+        //得到今年的生日
+        var birthdayThisYear = new Date(now.getFullYear(), month - 1, day);
+        if (birthdayThisYear > now) {
+            dec--;
+        }
+        return dec;
+    },
+    getDateString: function (date) {
+        var year = date.getFullYear().toString().padStart(4, "0");
+        var month = (date.getMonth() + 1).toString().padStart(2, "0");
+        var day = date.getDate().toString().padStart(2, "0");
+
+        var hour = date.getHours().toString().padStart(2, "0");
+        var minute = date.getMinutes().toString().padStart(2, "0");
+        var second = date.getSeconds().toString().padStart(2, "0");
+
+        return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
     }
 }
 
