@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
     <div class="container">
         <ul>
@@ -29,15 +27,24 @@
         <strong>asdfasdfgasdfa</strong>
         <i>asadfasfas</i>
         <p>aasdfdasf</p>
-        <header class="c3">
-            <p id="test">dfgasdfasfaf</p>
-        </header>
+        <div class="c3">
+            <p>dfgasdfasfaf</p>
+        </div>
     </div>
 
     <script>
-        //写一个函数，传入一个dom对象，返回该对象的第一个div容器
-        
+        function getDivContainer(dom) {
+            // var parent = dom.parentElement;
+            // while (parent && parent.nodeName !== "DIV") {
+            //     parent = parent.parentElement;
+            // }
+            // return parent;
+            for (var parent = dom.parentElement; parent && parent.nodeName !== "DIV"; parent = parent.parentElement) {}
+            return parent;
+        }
+
+        var div = getDivContainer(test);
+        console.log(div);
     </script>
 </body>
-
 </html>
