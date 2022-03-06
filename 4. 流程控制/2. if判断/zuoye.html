@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var number = prompt("请输入三位数")
+        // if (number > 99 && number < 1000) {
+        //     if (number % 13 === 0) {
+        //         console.log('可以被整除')
+        //     } else {
+        //         console.log('不可以被整除')
+        //     }
+        // } else {
+        //     console.log('用户输入有误')
+        // }
+
+        // var height = prompt("请输入身高");
+        // var weight = prompt("请输入体重");
+        // var sex = prompt("请输入性别");
+        // var bi = sex === '男' ? (height - 80) / 0.7 : (height - 70) / 0.6
+
+        // if ((weight - bi) / bi > 0.1) {
+        //     console.log('太胖')
+        // } else if ((weight - bi) / bi < -0.1) {
+        //     console.log('太瘦')
+        // } else {
+        //     console.log('标准')
+        // }
+
+        // var jine = prompt('输入金额')
+        // var nianshu = prompt('输入年数')
+        // var shouyi = 0;
+        // if (jine === null || isNaN(jine) === true || isNaN(nianshu) === true || jine < 0 || nianshu < 0) {
+        //     console.log('输入错误')
+        // } else {
+        //     if (0 <= jine && jine <= 500000) {
+        //         shouyi = jine * nianshu * 0.04
+        //     } else if (jine >= 500000 && jine < 2000000) {
+        //         shouyi = jine * nianshu * 0.045
+        //     } else {
+        //         shouyi = jine * nianshu * 0.045 * 1.1
+        //     }
+        //     console.log(shouyi)
+        // }
+
+
+
+        // var shuru = prompt('输入你出的拳形')
+        // var suiji = Math.round(Math.random() * 2)
+        // var dnq
+        // if (suiji === 0) {
+        //     dnq = "拳头"
+        // } else if (suiji === 1) {
+        //     dnq = "剪刀"
+        // } else if (suiji === 2) {
+        //     dnq = "布"
+        // }
+        // console.log(shuru, dnq)
+        // if (shuru === dnq) {
+        //     console.log('平局')
+        // } else if (shuru === '拳头') {
+        //     if (dnq === '剪刀') {
+        //         console.log('我赢')
+        //     } else {
+        //         console.log('我输')
+        //     }
+        // } else if (shuru === '剪刀') {
+        //     if (dnq === '布') {
+        //         console.log('我赢')
+        //     } else {
+        //         console.log('我输')
+        //     }
+        // } else if (shuru === '布') {
+        //     if (dnq === '拳头') {
+        //         console.log('我赢')
+        //     } else {
+        //         console.log('我输')
+        //     }
+        // }
+        // console.log(suiji)
+
+        var index = Math.floor(Math.random() * 5 + 1);
+        console.log(index)
+
+        function getRandom(max, min) {
+            return Math.floor(Math.random() * (max + 1  - min) + min)
+        }
+
+    </script>
+</body>
+
+</html>

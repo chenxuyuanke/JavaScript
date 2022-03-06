@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 5. 从一个标准的身份证号中取出用户的出生年月日和性别，保存到对象中
+
+    例如，"524713199703020014"
+
+    得到对象：
+    birthYear: 1997
+    birthMonth: 3
+    birthDay: 2
+    gender: "男" // 性别看倒数第二位，奇数为男，偶数为女 -->
+    <script>
+        var cradNumber = '524713199703020014';
+        function getUserInfo(cradNumber) {
+            return {
+                birthYear: +cradNumber.slice(6, 10),
+                birthMonth: +cradNumber.substr(10, 2),
+                birthDay: +cradNumber.substr(12, 2),
+                gender: cradNumber.substr(-2, 1) % 2 === 0 ? '女' : '男'
+            }
+
+        }
+        console.log(getUserInfo(cradNumber))
+    </script>
+</body>
+
+</html>

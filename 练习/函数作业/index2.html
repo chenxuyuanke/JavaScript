@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 阶乘
+        // 5 * 4 * 3 * 2 * 1
+        function jiechen(num, total) {
+            if (num === 1) {
+                return total;
+            }
+            return jiechen(num - 1, num * total)
+        }
+        // jiechen()
+
+
+        //求斐波拉契数列第n位的值
+        //1  1  2  3  5  8  13  21  ...
+
+        function feibo(n) {
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            return feibo(n - 1) + feibo(n - 2)
+        }
+    </script>
+</body>
+
+</html>

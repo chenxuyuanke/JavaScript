@@ -16,6 +16,8 @@
         //f(2) = 2*f(1)
         //f(3) = 3*f(2)
         //n的阶乘 n!
+
+        // 尾递归
         function fhelper(n, total) {
             if (n === 1) {
                 return total;
@@ -28,6 +30,15 @@
         }
 
         console.log(f(5));
+
+
+        // 正常递归
+        function h(n) {
+            if (n === 1) {
+                return total;
+            }
+            return n * (n - 1);
+        }
     </script>
 </body>
 

@@ -9,9 +9,17 @@
 </head>
 
 <body>
-    <input type="text">
+    <input type="text" >
     <script>
         // 制作一个只能书写整数的文本框，必须使用type=text的文本框
+        var Input=document.querySelector('input')
+        Input.onkeypress=function(e){
+            if(''+Number(e.key)=== 'NaN'){
+                // return false
+            }
+            // 或者通过unicode编码判断
+            console.log('1')
+        }
     </script>
 </body>
 

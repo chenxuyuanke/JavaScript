@@ -41,7 +41,8 @@
             b.onclick = function() {
                 var num = parseInt(span.innerText);
                 //加某个数
-                var plus = parseInt(this.dataset.plus);
+                // var plus = parseInt(this.dataset.plus);
+                var plus = + this.getAttribute("data-plus")
                 var result = num + plus;
                 if (result < 0) {
                     result = 0;

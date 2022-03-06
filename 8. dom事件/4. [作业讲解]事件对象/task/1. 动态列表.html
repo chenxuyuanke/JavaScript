@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p{
+            display: none;
+        }
+        p.error {
+            color: red;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="txt">
+        <button id="btnAdd">添加</button>
+    </div>
+    <p>不能添加空的文本</p>
+    <ul>
+        <li class="model">
+            <span>列表1</span>
+            <button>删除</button>
+        </li>
+        
+    </ul>
+
+    <script>
+        var btnAdd = document.getElementById("btnAdd");
+        var txt = document.getElementById("txt");
+        var ul = document.getElementsByTagName("ul")[0];
+        var oP = document.getElementsByTagName("p")[0]
+        var model = document.getElementsByClassName("model")[0];
+
+        ul.onclick = function (e) {
+            console.dir(e.target)
+            if (e.target.nodeName === 'BUTTON') {
+                e.target.parentElement.remove();
+            }
+        }
+
+        btnAdd.onclick = function () {
+            if (!txt.value.trim()) {
+                oP.className = "error";
+                return;
+            }
+            oP.className = "";
+            var li = model.cloneNode(true);
+            li.firstElementChild.innerText = txt.value;
+            txt.value = "";
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+
+</html>

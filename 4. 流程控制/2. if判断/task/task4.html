@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 4. 某理财公司推出一种理财服务，服务规则如下：
+    若用户的理财金额在50万元以下，则每年的收益按照4%计算。
+    若用户的理财金额在50万元以上（包括50万），则每年收益按照4.5%计算。
+    若用户的理财金额超过200万，除了理财收益外，还要额外给予用户收益金额的10%
+    编写程序，让用户输入理财金额和理财年限，计算到期后的收益 -->
+
+    <script>
+        var capital = 1000000;
+        var years = 12;
+        var rate;
+        // capital >= 1000000 ? (rate = 4 * 1.2) : rate = 4;
+
+        if (capital < 500000) {
+            rate = 4
+        } else if (capital >= 500000 && capital < 2000000) {
+            rate = 4.5
+        } else if (capital > 2000000) {
+            rate = 4.5 * 1.1
+        }
+
+        var interest = capital * rate / 100 * years
+
+        console.log(`收益为${interest},收益率为${rate}`)
+    </script>
+</body>
+
+</html>

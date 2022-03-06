@@ -24,3 +24,16 @@ function isPrime(n){
 }
 
 var s = sum(1,3);
+
+
+/**
+ * 判断
+ *
+ * @param {*} a
+ * @param {*} b
+ * @param {*} c
+ * @return {*} 
+ */
+function maxOfArray(a,b,c){
+    return a+b+c;
+}

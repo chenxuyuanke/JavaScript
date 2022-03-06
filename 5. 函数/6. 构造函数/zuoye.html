@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function User(name,healthy, damage, defensive, crit) {
+            this.name = name;
+            this.healthy = healthy;
+            this.damage = damage;
+            this.defensive = defensive;
+            this.crit = crit;
+            this.attck = function (target) {
+                // console.log(this.damage-hero.defensive || 1)
+                var hitNumber= this.damage * isCrit(this.crit) - target.defensive < 1 ? 1 : this.damage * isCrit(
+                    this.crit) - target.defensive
+                target.healthy -= hitNumber
+                // console.log(hitNumber,target.healthy)
+                console.log(
+                    `${this.name}\t生命：${this.healthy}\t攻击：${this.damage}\t防御：${this.defensive}\t暴击率：${this.crit}%  攻击了 
+                    ${target.name}\t生命：${target.healthy}\t攻击：${target.damage}\t防御：${target.defensive}\t暴击率：${target.crit}%`);
+                return target.healthy>0
+
+            }
+            this.print = function () {
+                console.log(
+                    `${this.name}\t生命：${this.healthy}\t攻击：${this.damage}\t防御：${this.defensive}\t暴击率：${this.crit}%`);
+            }
+        }
+
+        function isCrit(crit) {
+            if (Math.random() < crit) {
+                return 2
+            }
+            return 1
+        }
+        let monster = new User('cg',500, 50, 30,0.1)
+        let hero = new User('st',300, 60, 20,0.3)
+        monster.print()
+        hero.print()
+        while(true){
+            if(!monster.attck(hero) ){
+                break;
+            }
+            if(!hero.attck(monster)){ 
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

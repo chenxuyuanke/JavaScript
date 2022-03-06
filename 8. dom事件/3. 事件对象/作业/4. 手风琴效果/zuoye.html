@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        var app = document.getElementById('app')
+
+        var menu = [{
+                name: "菜单一",
+                children: ["商品一", "商品二", "商品三", "商品四"]
+            },
+            {
+                name: "菜单二",
+                children: ["商品一", "商品二", "商品三", "商品四"]
+            }, {
+                name: "菜单三",
+                children: ["商品一", "商品二", "商品三"]
+            }
+        ];
+        function renderMenu(menu){
+            var oUl=document.createElement('ul')
+            for (let i = 0; i < menu.length; i++) {
+                var oLi=document.createElement('li')
+                var str=''
+                str+=`<h4>${menu[i].name}</h4>`
+                if(menu[i].children){
+                    str+='<ul>'
+                    for (let j = 0; j < menu[i].children.length; j++) {
+                        str+=`<p>${menu[i].children[j]}</p>`
+                    }
+                    str+='</ul>'
+                }
+                oLi.innerHTML=str
+                oUl.appendChild(oLi)
+            }
+            app.appendChild(oUl)
+            oUl.onclick=function(e){
+                if(e.target.tagName==='H4'){
+                    e.target.nextElementSibling.style.display=e.target.nextElementSibling.style.display==='none'?'block':'none'
+                }
+            }
+        }   
+        renderMenu(menu)
+
+    </script>
+</body>
+
+</html>

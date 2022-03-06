@@ -19,7 +19,16 @@
         点击div，设置div的背景色为随机颜色
     </p>
     <div class="container">
-    
+        
     </div>
+    <script src='../../../common/BetterFunction.js'></script>
+    <script>
+        var oDiv=document.querySelector('.container')
+        oDiv.onclick=function(){
+            oDiv.style.backgroundColor=`rgb(${MyFunctions.getRandom(0,255)},${MyFunctions.getRandom(0,255)},${MyFunctions.getRandom(0,255)})`
+        }
+
+
+    </script>
 </body>
 </html>

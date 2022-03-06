@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 3. 根据系统当前的月份，输出这一个月每一天的星期
+
+    2019年6月1日：星期六
+    2019年6月2日：星期日
+    .....
+    2019年6月30日：星期日 -->
+    <script>
+        var nowDate = new Date();
+
+        function getDayByDate(date) {
+            var year = nowDate.getFullYear();
+            var month = nowDate.getMonth() + 1;
+            var date = new Date(year, month, 0).getDate();
+            for (let index = 1; index <= date; index++) {
+                // const element = ;
+                console.log(`${year}年${month}月${index}日： 星期${getDayOfWeek(new Date(year, month, index))}`)
+            }
+        }
+        getDayByDate(nowDate)
+
+
+        function getDayOfWeek(date) {
+            var day = date.getDay()
+            switch (day) {
+                case 0:
+                    return "日";
+                case 1:
+                    return "一";
+                case 2:
+                    return "二";
+                case 3:
+                    return "三";
+                case 4:
+                    return "四";
+                case 5:
+                    return "五";
+                case 6:
+                    return "六";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

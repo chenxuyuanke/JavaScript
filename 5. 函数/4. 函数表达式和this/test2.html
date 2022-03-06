@@ -14,7 +14,7 @@
             a: "asfd",
             b: 234,
             c: function() {
-                console.log("ccccc");
+                console.log(this);
             },
             d: function() {
                 console.log("dddd");
@@ -25,7 +25,7 @@
 
         var b = obj.c;
         b();
-        obj.d();
+        obj.c();
     </script>
 </body>
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //     1. 用一个变量保存成绩，输出该成绩是否及格（true 或 false）
+
+        //    2. 用一个变量保存年份，得到该年份2月的天数
+
+        //    3. 利息计算器
+
+        //    设置变量，分别存放本金、月数、年利率，计算利息
+
+        //    如果本金存放量超过了10万，年利率上浮20%（比如，年利率为4%，上浮后的年利率 4% * 1.2）
+
+        var count = 80;
+        var res = (count >= 0 && count <= 100 && count >= 60)
+        res && console.log(true)
+        res || console.log(false)
+
+        // 用逻辑运算，判断该年是否是闰年
+        // 闰年规则：4年一闰，百年不闰；400年一闰
+
+        var year = 2000;
+        var result = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+        result && console.log(30)
+        result || console.log(29)
+
+        var money = 200000
+        var month = 12
+        var rate = 4
+        var zhenshi 
+        var lixi = (money * rate/100/12 * month) 
+         money>=100000 && (lixi=lixi*1.2) 
+
+        
+    </script>
+</body>
+
+</html>

@@ -228,9 +228,10 @@ var MyFunctions = {
      * @param {*} min 最小值
      * @param {*} max 最大值
      */
-    getRandom: function (min, max) {
+    getRandom: function (min, max) { 
         return Math.floor(Math.random() * (max + 1 - min) + min);
     },
+
     /**
      * 根据出生年月日，计算年龄
      * @param {*} year 

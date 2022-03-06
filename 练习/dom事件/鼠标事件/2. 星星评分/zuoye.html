@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            float: left;
+            /* font-size: 0; */
+        }
+
+        .score {
+            float: left;
+            position: relative;
+            width: 100px;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            font-family: "Microsoft YaHei";
+            font-size: 14px;
+            left: 0;
+            top: 0;
+        }
+
+        .scoreDisplay {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./images/empty.png" alt="0">
+        <img src="./images/empty.png" alt="1">
+        <img src="./images/empty.png" alt="2">
+        <img src="./images/empty.png" alt="3">
+        <img src="./images/empty.png" alt="4">
+    </div>
+    <div class="score">
+        <span>很差</span>
+        <span>较差</span>
+        <span>一般</span>
+        <span>较好</span>
+        <span>很好</span>
+    </div>
+    <script>
+        const disc = document.querySelectorAll('.score span')
+        const container = document.querySelector('.container')
+        const containerImg = document.querySelectorAll('.container img')
+        // const key = -1;
+        for (let index = 0; index < containerImg.length; index++) {
+            const element = containerImg[index];
+
+            element.onmouseenter = function (e) {
+                // key = index
+                containerImg.forEach((item, i) => {
+                    if (i <= index) {
+                        item.src = './images/shining.png'
+                    }else{
+                        item.src = './images/empty.png'
+                    }
+                })
+                document.querySelector('.scoreDisplay') && (document.querySelector('.scoreDisplay').className = '')
+                disc[index].className = 'scoreDisplay'
+            }
+            element.onmouseleave = function (e) {
+                // key = -1;
+                containerImg.forEach((item, i) => {
+                    item.src = './images/empty.png'
+                })
+                document.querySelector('.scoreDisplay') && (document.querySelector('.scoreDisplay').className = '')
+            }
+
+            element.onclick = function (e) {
+                // key = index
+                containerImg.forEach((item, i) => {
+                    if (i <= index) {
+                        item.src = './images/shining.png'
+                    }else{
+                        item.src = './images/empty.png'
+
+                    }
+                })
+                document.querySelector('.scoreDisplay') && (document.querySelector('.scoreDisplay').className = '')
+                disc[index].className = 'scoreDisplay'
+                element.onmouseleave = null
+            }
+        }
+    </script>
+</body>
+
+</html>

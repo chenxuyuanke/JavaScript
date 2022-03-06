@@ -12,8 +12,17 @@ this.myPlugin.inherit = (function () {
         son.prototype.constructor = son;
         son.prototype.uber = father.prototype;
     }
-}());
 
+
+}());
+/**
+ * ES5的方法实现继承
+ */
+// this.myPlugin.inherit = function (son, father) {
+//         son.prototype = Object.create(father.prototype);
+//         son.prototype.constructor = son;
+//         son.prototype.uber = father.prototype;
+// }
 /**
  * obj2混合到obj1产生新的对象
  */
@@ -76,11 +85,12 @@ this.myPlugin.clone = function (obj, deep) {
  */
 this.myPlugin.debounce = function (callback, time) {
     var timer;
-    return function () {
+    return function () { //返回函数 防止timer污染全局变量
         clearTimeout(timer);//清除之前的计时
         var args = arguments; //利用闭包保存参数数组
         timer = setTimeout(function () {
             callback.apply(null, args);
+            // 再外部调用时可以用bind绑定this
         }, time);
     }
 }

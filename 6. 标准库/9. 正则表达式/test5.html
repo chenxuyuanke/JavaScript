@@ -16,17 +16,21 @@
         //     console.log(result);
         // }
 
-        // var s = "2015-5-1, 2019-6-19, 2000-04-28";
-        // //得到每一个日期，并得到每个日期的年月日
-        // var reg = /(?:\d{4})-(?:\d{1,2})-(\d{1,2})/g;
-        // while (result = reg.exec(s)) {
-        //     console.log(result);
-        // }
+        var s = "2015-5-1, 2019-6-19, 2000-04-28";
+        //得到每一个日期，并得到每个日期的年月日
+        var reg = /(?:\d{4})-(?:\d{1,2})-(\d{1,2})/g;
+        while (result = reg.exec(s)) {
+            console.log(result);
+        }
 
-        var s = "2015-5-1,- 2019-6-19,- 2000-04-28";
-        var reg = /(\d{4})-(\d{1,2})-(\d{1,2})/g;
-        s = s.replace(reg, "$1/$2/$3")
-        console.log(s);
+        // var s = "2015-5-1,- 2019-6-19,- 2000-04-28";
+        // var reg = /(\d{4})-(\d{1,2})-(\d{1,2})/g;
+        // s = s.replace(reg, function(match,g1,g2,g3){
+        //     return `${g1}/${g2}/${g3}`
+        // })
+
+        // // s = s.replace(reg, "$1/$2/$3")
+        // console.log(s);
     </script>
 </body>
 

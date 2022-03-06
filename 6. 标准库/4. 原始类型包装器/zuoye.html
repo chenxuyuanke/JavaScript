@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../../common/BetterFunction.js"></script>
+    <script>
+        // 以下练习可以使用之前书写的通用函数
+
+       
+        
+        // 1. 找到某个字符串中出现最多的字符， 打印字符和它出现的次数
+        // var str='2,s,3s,54';
+        // var arr=str.split('')
+        // console.log(MyFunctions.getTopFreqInArray(arr))
+
+        // 2. 将一个字符串中单词之间的空格去掉， 然后把每个单词首字母转换成大写
+
+        // 比如： "hello world" - > "HelloWorld"
+
+        // var str='hello world'
+        // var arr=str.split(' ')
+        // var newStr=''
+        // arr.forEach(function(it) {
+        //     newStr+=it.substr(0,1).toUpperCase()
+        //     newStr+=it.substr(1)
+        // })
+        // console.log(newStr)
+
+        // 3. 书写一个函数， 产生一个指定长度的随机字符串， 字符串中只能包含大写字母、 小写字母、 数字
+
+        // var  arr=[]    
+        // for (let i = 48; i < 48+10; i++) {
+        //     arr.push(String.fromCharCode(i))           
+        // }
+        // for (let i = 65; i < 65+26; i++) {
+        //     arr.push(String.fromCharCode(i))           
+        // }
+        // for (let i = 97; i < 97+26; i++) {
+        //     arr.push(String.fromCharCode(i))           
+        // }
+        // // console.log(arr)
+        // function stringFactory(number){
+        //     var str =''
+        //     for (let i = 0; i < number; i++) {
+        //         str+=arr[MyFunctions.getRandom(0,arr.length-1)]     
+        //     }
+        //     return str;
+        // }
+        // console.log(stringFactory(10))
+
+        // 4. 将字符串按照字符编码的顺序重新升序排序
+        // var str='helloWorld'
+        // var arr=str.split('')  
+        // console.log(arr.sort().join('') )
+
+         // 5. 从一个标准的身份证号中取出用户的出生年月日和性别， 保存到对象中
+
+        // 例如， "524713199703020014"
+
+        // 得到对象：
+        // birthYear: 1997
+        // birthMonth: 3
+        // birthDay: 2
+        // gender: "男" // 性别看倒数第二位，奇数为男，偶数为女
+
+        function idCard(str){
+            var newStr=str.substr(6,8)
+
+            return{
+                birthYear:newStr.substr(0,4),
+                birthMonth:newStr.substr(4,2).replace('0',''),
+                birthDay:newStr.substr(6,2).replace('0',''),
+                gender:MyFunctions.isOdd(str.substr(-2,1)) ? '男':'女'
+            }
+
+        }
+        console.log(idCard('524713199703020014'))
+
+        
+    </script>
+</body>
+
+</html>

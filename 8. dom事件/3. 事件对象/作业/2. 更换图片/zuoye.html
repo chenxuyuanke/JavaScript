@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        var app = document.getElementById('app')
+        var imgSrc=['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg']
+        var oButton=document.createElement('div')
+        var oImg=document.createElement('img')
+        oImg.src='img/1.jpg'
+        for (let i = 0; i < imgSrc.length; i++) {
+            var oButtonSon=document.createElement('button')
+            oButtonSon.innerText=`第${i+1}张`
+            oButtonSon.onclick=function(){
+                oImg.src=imgSrc[i]
+            }
+            oButton.appendChild(oButtonSon)
+        }
+        app.appendChild(oButton)
+        app.appendChild(oImg)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 去除图片的3px */
+        img {
+            vertical-align: top;
+        }
+
+        /* 容器样式 */
+        .container {
+            width: 350px;
+            height: 350px;
+            margin: 100px;
+            border: 1px solid #ccc;
+            position: relative;
+            border: 1px solid;
+        }
+
+        .mouse {
+            position: relative;
+        }
+
+        /* 大鼠标盒子样式 */
+        .mouseBigSize {
+            width: 450px;
+            height: 450px;
+            position: absolute;
+            top: 0;
+            left: 370px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none;
+        }
+
+        /* 大鼠标盒子里面图片样式 */
+        .mouseBigSize img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* 遮罩层样式 */
+        .mask {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 小鼠标 -->
+        <div class="mouse">
+            <img src="./images/mouse.jpg" alt="">
+            <!-- 遮罩层 -->
+            <div class="mask"></div>
+        </div>
+        <!-- 大鼠标 -->
+        <div class="mouseBigSize">
+            <img src="./images/mouseBigSize.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        var mouse = document.querySelector('.mouse')
+        var mask = document.querySelector('.mouse .mask')
+        var mouseBigSize = document.querySelector('.mouseBigSize')
+        var mouseBigImg = mouseBigSize.querySelector('img')
+
+        function getDistance(distance, type, style, styleMouseImg) {
+            // console.log(distance,parseFloat(style[type]),parseFloat(styleMouseImg[type]))
+            var juli = distance * styleMouseImg[type] / style[type]
+
+            if (juli < 0) {
+                return 0
+            }
+            return juli
+            // if(distance-parseFloat(style[type])<0){
+            //     return 0
+            // }else if(distance>parseFloat(styleMouseImg[type])-parseFloat(style[type])/2){
+
+            //     return parseFloat(styleMouseImg[type])-parseFloat(style[type])
+            // }
+            // return distance-parseFloat(style[type])/2
+        }
+
+        function getPosition(e) {
+            if (e.target.className === 'mask') {
+                return {
+                    top: e.offsetY,
+                    left: e.offsetX
+                }
+            } else {
+                var style = getComputedStyle(mask)
+                var maskLeft = parseFloat(style.left)
+                var maskTop = parseFloat(style.top)
+                return {
+                    top: e.offsetY + maskTop,
+                    left: e.offsetX + maskLeft
+                }
+            }
+        }
+
+        function setPosition(distance) {
+            mask.style.left = distance.left+'px'
+            mask.style.top = distance.top+'px'
+        }
+        mouse.onmouseenter = function (e) {
+            mask.style.display = 'block';
+            mouseBigSize.style.display = 'block'
+        }
+        mouse.onmouseleave = function (e) {
+            mask.style.display = 'none';
+            mouseBigSize.style.display = 'none'
+        }
+
+        mouse.onmousemove = function (e) {
+            var styleBigSize = getComputedStyle(mouseBigSize)
+            var styleMouseImg = getComputedStyle(mouse.querySelector('img'))
+
+            // console.log()
+            var disx = getDistance(e.offsetX,'width',style,styleBigSize)
+            var disy = getDistance(e.offsetY,'height',style,styleBigSize)
+            // console.log(disx,disy)
+
+            // maskLeft += e.offsetX
+            // maskTop += e.offsetY
+
+
+            // mask.style.left = e.offsetX + 'px'
+            // mask.style.top = e.offsetY + 'px'
+
+            var distance = getPosition(e)
+            console.log(distance)
+            setPosition(distance)
+
+
+            // var disLeft=disx*(parseFloat(mouseBigImg.width)/e.target.width)
+            // var disTop=disy*(parseFloat(mouseBigImg.height)/e.target.height)
+
+            // var disLeft=disx*(parseFloat(styleBigSize.width)/parseFloat(style.width))
+
+            // var disTop=disy*(parseFloat(styleBigSize.height)/parseFloat(style.height))
+
+
+            // console.log(disLeft,disTop);
+
+            mouseBigSize.style.width=e.target.width*(parseFloat(mouseBigImg.width)/e.target.width)
+            mouseBigSize.style.height=e.target.height*(parseFloat(mouseBigImg.height)/e.target.height)
+
+            mouseBigImg.style.left=disx+'px'
+            mouseBigImg.style.top=disy+'px'
+
+        }
+    </script>
+</body>
+
+</html>

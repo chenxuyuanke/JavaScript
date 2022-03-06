@@ -27,6 +27,18 @@
         var u2 = createUser("姬成", 20, "男");
         u2.sayHello();
         console.log(u1 === u2);
+
+
+        function People(name, age, sex) {
+            this.age = age;
+            this.name = name;
+            this.sex = sex;
+            this.sayHello = function () {
+                console.log(`我叫${this.name}，年龄${this.age}岁，性别${this.sex}`);
+            }
+        }
+        var u3 =new People("陈科", 18, "男");
+        u3.sayHello();
     </script>
 </body>
 

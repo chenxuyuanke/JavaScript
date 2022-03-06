@@ -45,8 +45,11 @@
         div.onmousemove = function(e){
             // console.log(e.pageX, e.pageY);
             // console.log(e.clientX, e.clientY);
+            e.stopPropagation()
+            console.log(e.offsetX, e.offsetY);
+
             // console.log(e.screenX, e.screenX);
-            console.log(e.movementX, e.movementY);
+            // console.log(e.movementX, e.movementY);
         }
     </script>
 </body>

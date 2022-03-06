@@ -10,25 +10,42 @@
 
 <body>
     <script>
-        var user = {
-            account: "abc",
-            pwd: "123456",
-            gender: "男",
-            isVip: false,
-            age: 18
-        };
+        // var user = {
+        //     account: "abc",
+        //     pwd: "123456",
+        //     gender: "男",
+        //     isVip: false,
+        //     ht:undefined,
+        //     age: 18
+        // };
 
         // console.log(user, typeof user);
         // 输出对象的账号
         // console.log(user.account, typeof user.account);
         // 输出对象的年龄
-        console.log(user.age, typeof user.age);
+        // console.log(user.age, typeof user.age);
 
-        console.log(user.sex, typeof user.sex);
+        // console.log(user.sex, typeof user.sex);
 
-        var user2;
+        // var user2;
 
-        console.log(user2.account);
+        // console.log(user2.account);
+
+
+        var user =['123',1,2,,,4,5]
+        for (const key in user) {
+            if (user.hasOwnProperty(key)) {
+                const element = user[key];
+                console.log(element)
+            }
+        }
+
+        for (const value of user) {
+            // if (user.hasOwnProperty(key)) {
+                // const element = user[key];
+                console.log(value)
+            // }
+        }
     </script>
 </body>
 

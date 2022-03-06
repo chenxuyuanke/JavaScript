@@ -17,10 +17,35 @@
                 return 123;
             }
         }
+        var obj1 = {
+            x: 13,
+            y: 34534,
+            valueOf() {
+                return 123;
+            }
+        }
 
         console.log(obj + 1);
         // 如果调用了valueOf已经得到了原始类型，则不再调用toString
         // console.log(obj.valueOf().toString() + 1);
+
+
+        function test() {
+
+        }
+        function test1() {
+
+        }
+        console.log(test + 1);
+        console.log(obj.toString.call(test) + 1);
+
+        console.log(test.toString === obj.toString);
+        console.log(obj1.toString === obj.toString);
+
+        console.log(obj.toString);
+
+        console.log(test.toString === test1.toString);
+
     </script>
 </body>
 

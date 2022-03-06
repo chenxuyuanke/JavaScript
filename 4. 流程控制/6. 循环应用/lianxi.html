@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 判断一个数是不是素数（质数）
+        // 素数：一个大于1的整数，只能被1和自身整除
+        // 比如：2是一个素数
+        // 比如：4不是一个素数
+
+        // var i = prompt()
+        // var n = 0;
+
+        // for (j = 1; j <= i; j++) {
+
+        //     if (i % j === 0) {
+        //         n++;
+
+        //     }
+
+        // }
+        // if (n <= 2) {
+        //     console.log(`${i}是一个素数`)
+        // }
+
+        // var i = 0;
+
+        // for (j = 1; j <= 10; j++) {
+
+        //     console.log(j)
+
+        // }
+
+        // for (j = 1; j <= 1; j++) {
+
+        //     console.log(j)
+
+        // }
+
+        // var n = prompt()
+
+        // for (var i = 1; i <= n; i++) {
+        //     console.log('*')
+        // }
+        // var str='';
+        // for (var i = 1; i <= 15; i++) {
+        //     str+='*'
+        //     if(i%5===0){
+        //         str+='\n'
+        //     }
+        // }
+        // console.log(str)
+        // var str='';
+        // for (var i = 1; i <=5; i++) {
+        //     for(var j =1 ;j<=i ; j++){
+        //         str+='*'
+        //         if(i===j){
+        //             str+='\n';
+        //             break;
+        //         }
+        //     }
+
+        // }
+        // console.log(str)
+
+        // var str = '';
+
+        // for (var i = 1; i <= 9; i++) {
+        //     for (var j = 1; j <= i; j++) {
+        //         str += `${i}*${j}=${i*j} `
+        //         if (i === j) {
+        //             str += '\n';
+        //         }
+        //     }
+        // }
+        // console.log(str)
+
+        var str = '';
+        var n = 8
+        var total=2*(n-1)+1
+        for (var i = 1; i <= n; i++) {
+
+            var sfanwei=n-i
+
+            var bfanwei=n+i
+
+            for (let j = 0; j <= total; j++) {
+                if(j>sfanwei&&j<bfanwei){
+                    str += '*'; 
+                }else{
+                    str += ' ';
+                }
+            }
+            str += '\n';
+            // if(index>n && index<n){
+            //    str += '*';               
+            // }else{
+            //    str += ' ';
+            // }
+        }
+        console.log(str)
+    </script>
+
+</body>
+
+</html>

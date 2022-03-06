@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getDayString(dataObj) {
+            return `${dataObj.getFullYear().toString().padStart(4,"0")}-${(dataObj.getMonth()+1).toString().padStart(2,"0")}-${dataObj.getDate().toString().padStart(2,"0")} ${dataObj.getHours().toString().padStart(2,"0")}:${dataObj.getMinutes().toString().padStart(2,"0")}:${dataObj.getSeconds().toString().padStart(2,"0")}`
+        }
+        console.log(getDayString(new Date(2008,0,2)))
+
+
+
+        // function getDayString() {
+        //     var nowDate = new Date();
+        //     var month = new Date().getMonth()
+        //     return `${nowDate.getFullYear()}年-\
+        //     ${nowDate.getMonth()}月-\
+        //     ${nowDate.getDate()}日:
+        //     ${nowDate.getDay()}`
+        // }
+
+
+        function getOld(year, month, date) {
+            var nowDate = new Date(year, month - 1, date)
+            var oldDate = new Date()
+            var old = oldDate.getFullYear() - year
+            if (month === 2 && date === 29) {
+                date = 28
+            }
+            var jinianbirth = new Date(oldDate.getFullYear(), month - 1, date)
+            console.log(jinianbirth,)
+            if (jinianbirth - oldDate > 0) {
+                old--
+            }
+
+            // console.log(nowDate,oldDate,oldDate.getTime(),nowDate-oldDate)
+            return old
+        }
+        // console.log(getOld(1994, 2, 29))
+
+        function getbirthDay(year, month, date) {
+            var nowDate = new Date(year, month - 1, date)
+            var oldDate = new Date()
+            var old = oldDate.getFullYear() - year
+            if (month === 2 && date === 29) {
+                date = 28
+            }
+            var jinianbirth = new Date(oldDate.getFullYear(), month - 1, date)
+            var day = 0
+            if (jinianbirth - oldDate < 0) {
+                jinianbirth = new Date(oldDate.getFullYear() + 1, month - 1, date)
+            }
+
+            console.log(jinianbirth, oldDate)
+
+            day = Math.ceil((jinianbirth - oldDate) / (24 * 60 * 60 * 1000))
+
+            // console.log(nowDate,oldDate,oldDate.getTime(),nowDate-oldDate)
+            return day
+        }
+        // console.log(getbirthDay(1994, 12, 15))
+
+
+    </script>
+</body>
+
+</html>

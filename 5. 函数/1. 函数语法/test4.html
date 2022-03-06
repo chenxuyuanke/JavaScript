@@ -18,7 +18,7 @@
         }
 
         var nums = [234, 45, 65, 76, 3, 7, 76, 2342];
-
+        // 求数组里的素数之和
         var sum = 0;
         for (var i = 0; i < nums.length; i++) {
             if (isOdd(nums[i])) {
@@ -26,6 +26,12 @@
             }
         }
         console.log(sum);
+        // 输出数组里的素数
+        for (var i = 0; i < nums.length; i++) {
+            if (!isOdd(nums[i])) {
+                console.log(nums[i]);
+            }
+        }
     </script>
 </body>
 

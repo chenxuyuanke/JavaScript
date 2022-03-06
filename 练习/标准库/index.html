@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, -6];
+        // 去掉数组中的负数， 然后对每一项平方， 然后再对每一项翻倍， 然后求和
+        // 不许使用循环
+
+        // var count = arr.filter(function (item) {
+        //     return item >= 0
+        // }).map((item) => Math.pow(item, 2)
+        // ).map((item) => item * 2).reduce((item,total) => total += item)
+        // 1,4,9,16,25,36
+        // 2,8,18,32,50,72
+        // console.log(count)
+
+        // var arr = [1, 2, 4];
+        // var count = arr.reduce((item, total, index, arr) => {
+        //     console.log(total, item, index, arr)
+        //     return total += item
+        // }, 1)
+        // console.log(`count:${count}`)
+
+        // 1. 找到某个字符串中出现最多的字符，打印字符和它出现的次数
+        // function getTopFreqInArray(arr) {
+
+        //     let obj = {};
+
+        //     for (var i = 0; i < arr.length; i++) {
+        //         if (obj[arr[i]] === undefined) {
+        //             obj[arr[i]] = 1
+        //         } else {
+        //             obj[arr[i]]++
+        //         }
+        //     }
+        //     let result = {}
+        //     for (const key in obj) {
+        //         if (Object.hasOwnProperty.call(obj, key)) {
+        //             const element = obj[key];
+        //             if (element > result.times || !result.times) {
+        //                 result = {
+        //                     number: key,
+        //                     times: element
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     return result
+        // }
+
+        // let str = "helloWorld yooa"
+
+        // function times(str) {
+        //     // return getTopFreqInArray(str.split(''))
+        //     return getTopFreqInArray(Array.from(str))
+
+        // }
+
+        // console.log(times(str))
+
+        // 2. 将一个字符串中单词之间的空格去掉，然后把每个单词首字母转换成大写
+
+        // let str = "hello world ya"
+
+        // function trim(str) {
+        //     return str.split(' ').map((item) => {
+        //         return item.replace(item[0], item[0].toUpperCase())
+        //     }).join('')
+        // }
+
+        // console.log(trim(str))
+        // 比如："hello world" -> "HelloWorld"
+
+        // 3. 书写一个函数，产生一个指定长度的随机字符串，字符串中只能包含大写字母、小写字母、数字
+
+        // function createThePassword(len) {
+        //     var template = "";
+        //     for (var i = 65; i < 65 + 26; i++) {
+        //         template += String.fromCharCode(i);
+        //     }
+        //     for (var i = 97; i < 97 + 26; i++) {
+        //         template += String.fromCharCode(i);
+        //     }
+        //     for (var i = 48; i < 48 + 10; i++) {
+        //         template += String.fromCharCode(i);
+        //     }
+        //     var result = "";
+        //     for (let i = 0; i < len; i++) {
+        //         let choose = Math.floor(Math.random() * template.length)
+        //         result += template.charAt(choose);
+
+        //     }
+        //     return result
+        // }
+
+        // 4. 将字符串按照字符编码的顺序重新升序排序
+        let str = "hello world ya"
+
+        function sortByCharCode(str) {
+            var arr = Array.from(str);
+            return arr.sort((a, b) => {
+                return a.charCodeAt(0) - b.charCodeAt(0)
+            }).join('')
+
+        }
+        sortByCharCode(str)
+
+        // 5. 从一个标准的身份证号中取出用户的出生年月日和性别，保存到对象中
+
+        // 例如，"524713199703020014"
+
+        // 得到对象：
+        // birthYear: 1997
+        // birthMonth: 3
+        // birthDay: 2
+        // gender: "男"  // 性别看倒数第二位，奇数为男，偶数为女
+
+        function getUserInfo(cardCode) {
+            return {
+                birthYear: cardCode.slice(6, 10),
+                birthMonth: cardCode.slice(10, 12).charAt(0) === '0' ? cardCode.slice(10, 12).replace('0', '') : cardCode.slice(10, 12),
+                birthDay: cardCode.slice(12, 14),
+                gender: cardCode.substr(-2, 1) % 2 === 0 ? '女' : '男'
+            }
+        }
+        getUserInfo("524713199713020014");
+    </script>
+</body>
+
+</html>

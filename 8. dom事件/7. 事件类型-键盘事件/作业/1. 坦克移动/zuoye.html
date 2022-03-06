@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            height: 600px;
+            position: relative;
+            border: 1px solid;
+        }
+
+        img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            /* transition: .5s; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="imgs/tankD.gif" alt="">
+    </div>
+    <script>
+        window.onkeydown = function (e) {
+            var tanke = document.querySelector('img')
+
+            // var clientWidth=document.body.clientWidth 
+            var clientHeight = parseInt(getComputedStyle(document.querySelector('div')).height)
+            var clientWidth = getComputedStyle(document.querySelector('div')).width
+
+
+            var style = getComputedStyle(tanke);
+            var tankeTop = parseInt(style.top)
+            var tankeHeight = parseInt(style.height)
+            // var tankeLeft=parseInt(style.left)
+
+            if (e.key === 'ArrowDown') {
+
+                if (tankeTop + tankeHeight >= clientHeight -tankeHeight) {
+                    tanke.style.top = clientHeight - tankeHeight + 'px'
+                    return;
+                }
+                tanke.src = 'imgs/tankD.gif'
+                tanke.style.top = tankeTop + tankeHeight + 'px'
+            } else if (e.key === 'ArrowUp') {
+                if (tankeTop - tankeHeight <= 0) {
+                    tanke.style.top = '0px'
+                    return
+                }
+                tanke.src = 'imgs/tankU.gif'
+                tanke.style.top = tankeTop - tankeHeight + 'px'
+            }
+        }
+    </script>
+</body>
+
+</html>

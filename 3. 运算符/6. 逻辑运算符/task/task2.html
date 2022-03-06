@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 2. 用一个变量保存年份，得到该年份2月的天数 、
+        公历闰年能被4整除且不能被100整除的为闰年，平均每四年中会有一个闰年，世纪年能被400整除的则是闰年
+    -->
+
+    <script>
+        var years = window.prompt('输入年份');
+        var isLeap = years % 4 === 0 && years % 100 !== 0 || years % 400 === 0
+
+        isLeap && console.log(29)
+        isLeap || console.log(28)
+    </script>
+</body>
+
+</html>

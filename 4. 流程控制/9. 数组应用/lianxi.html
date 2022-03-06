@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var length=prompt()
+        // var arr=[]
+        // for (let i = 0; i < length; i++) {
+        //     var n = prompt()
+        //     arr.push(n)
+        // }
+
+        // var arr=[2,4,8,77,43,56]
+        // for (let i = 0; i < arr.length; i++) {
+        //     var flag=true
+        //     for (let j = 2; j < arr[i]; j++) {
+        //         if(arr[i]%j===0){
+        //             flag=false
+        //             break
+        //         }     
+        //     }
+        //     if(flag){
+        //         console.log(arr[i])
+        //     }
+        // }
+
+        var arr = [11, 2,77, 4, 3, 4, 8, 77, 43, 56,77]
+
+        // for (const index in arr) {
+        //     if (arr[index]>arr[index+1]) {
+        //         let temp=arr[index];
+        //         arr[index]=arr[index+1]
+        //         arr[index+1]=temp;
+        //     }
+        // }
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     for (let j = i+1; j < arr.length; j++) {
+        //         if (arr[i] > arr[j]) {
+        //             let temp = arr[i];
+        //             arr[i] = arr[j]
+        //             arr[j] = temp;
+        //         }
+        //     }
+        // }
+        
+        var obj={}
+
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i] in obj){
+                obj[arr[i]]++
+            }else{
+                obj[arr[i]]=1
+            }
+        }    
+    </script>
+</body>
+
+</html>

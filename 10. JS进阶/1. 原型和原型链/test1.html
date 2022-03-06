@@ -10,12 +10,13 @@
 
 <body>
     <script>
-        function test(){
-            
+        function test() {
+            // return {}
         }
 
         var obj = new test();
         // obj.__proto__ === test.prototype
+        // 当test没有返回值时，obj的构造函数是test；返回一个普通对象时，obj的构造函数是Object
     </script>
 </body>
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. 提示用户输入一个三位数，若不是三位数，则提示用户输入有误；若是三位数，则判断该数能否被13整除。 -->
+
+    <script>
+        const number = window.prompt('输入三位数')
+        if (number >= 100 && number < 1000) {
+            number % 13 === 0 ? console.log('可以被13整除') : console.log('不可以被13整除')
+        } else {
+            console.log('输入有误')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 提示用户输入数组的长度，以及数组每一项的值，然后输出该数组
+
+        // var length = prompt('输入长度');
+        // var arr = [];
+        // for (let i = 0; i < length; i++) {
+        //     var item = prompt('输入值')
+        //     arr[i] = item;
+        // }
+
+        // 2. 初始化一个数字数组，然后求该数组所有项之和
+
+        // var arr = [1, 5, 12, 23, 44];
+        // var count = 0;
+        // for (let index = 0; index < arr.length; index++) {
+        //     count += arr[index];
+
+        // }
+        // count = arr.reduce((count, item) => {
+        //     return count + item
+        // })
+        // console.log(count)
+
+        // 3. 初始化一个数字数组，然后输出数组中所有的奇数
+
+        // var arr = [1, 5, 12, 23, 44];
+
+        // for (let index = 0; index < arr.length; index++) {
+        //     arr[index] % 2 !== 0 && console.log(arr[index]);
+        // }
+
+        // 4. 初始化一个数字数组，然后输出数组中所有的素数
+
+        // for (let index = 0; index < arr.length; index++) {
+        //     var times = 0;
+        //     for (let i = 2; i < arr[index]; i++) {
+        //         if (arr[index] % i === 0) {
+        //             times++;
+        //         }
+        //     }
+        //     // times === 0 && console.log(arr[index])
+        //     times !== 0 || console.log(arr[index])
+        // }
+
+        // 5. 斐波拉契数列是这样一种数列：1  1  2  3  5  8  13 ......
+        // 数列前两位为1，第n位 = 第n - 1位 + 第n - 2位
+        // 让用户输入斐波拉契数列的长度，在控制台中打印该长度的斐波拉契数列
+
+        // var length = prompt('输入长度');
+        // var arr = []
+        // for (let i = 0; i < length; i++) {
+        //     if (i === 1 || i === 0) {
+        //         arr[i] = 1; 
+        //     } else {
+        //         arr[i] = arr[i - 1] + arr[i - 2]
+        //     }
+        // }
+        // console.log(arr)
+
+
+        // 6. 定义一个用户数组，数组的每一项是一个用户对象，用户对象中包含账号和密码，随意初始化一些对象放入数组中。然后提示用户输入账号和密码，判断是否登录成功
+
+        // var users = [{
+        //     loginId: "abc",
+        //     loginPwd: "123"
+        // },
+        // {
+        //     loginId: "abc1",
+        //     loginPwd: "1234"
+        // },
+        // {
+        //     loginId: "abc2",
+        //     loginPwd: "1235"
+        // },
+        // {
+        //     loginId: "abc3",
+        //     loginPwd: "1236"
+        // }
+        // ];
+
+        // var loginId = prompt("请输入账号");
+        // var loginPwd = prompt("请输入密码");
+        // var flag = false;
+        // for (let index = 0; index < users.length; index++) {
+        //     loginId === users[index].loginId && loginPwd === users[index].loginPwd && (flag = true);
+        // }
+        // console.log(flag)
+
+        // 7. 初始化一个5 * 5的二维数组，数组每一项是一个数字，计算对角线之和
+
+        // var arr = [
+        //     [5, 2, 3, 1, 7],
+        //     [8, 0, 6, 7, 8],
+        //     [4, 0, 6, 2, 0],
+        //     [3, 0, 6, 8, 1],
+        //     [2, 0, 4, 5, 9]
+        // ];
+        // var count = 0;
+        // for (let index = 0; index < arr.length; index++) {
+        //     let ele = arr[index];
+        //     for (let i = 0; i < ele.length; i++) {
+        //         const element = ele[i];
+        //         if (ele.length - index - 1 === i) {
+        //             count += element
+        //             console.log(count)
+        //         }
+        //     }
+        // }
+
+        // 找出数组最大值;
+
+        // var nums = [23, 6, 666, 1, 55, 324];
+
+        // for (let index = 0; index < nums.length - 1; index++) {
+        //     // const element = nums[index];
+        //     if (nums[index] > nums[index + 1]) {
+        //         let item = nums[index]
+        //         nums[index] = nums[index + 1];
+        //         nums[index + 1] = item
+        //     }
+
+        // }
+
+        // var max = nums[0];
+        // for (var i = 1; i < nums.length; i++) {
+        //     if (nums[i] > max) {
+        //         max = nums[i];
+        //     }
+        // }
+        // console.log(max);
+
+
+        // 8. 初始化一个数字数组（数据随意），对该数组进行升序排序，然后输出结果
+
+        // 思路提示：
+
+        // 数组的排序有多种算法可以完成，这里介绍其中一种：冒泡排序算法
+
+        // 冒泡排序算法的原理如下：
+        // - 比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+        // - 对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
+        // - 针对所有的元素重复以上的步骤，除了已排好序的元素。
+
+
+        // var nums = [23, 666, 666, 1, 55, 666];
+
+
+        // for (let len = 1; len < nums.length; len++) {
+        //     let item = 0;
+        //     for (var i = 0; i < nums.length - len; i++) {
+        //         if (nums[i] > nums[i + 1]) {
+        //             item = nums[i];
+        //             nums[i] = nums[i + 1];
+        //             nums[i + 1] = item
+        //         }
+        //     }
+        //     console.log(len)
+        // }
+
+        // console.log(nums)
+
+        // 9. 有一个数组，存放了一些数字，找出出现频率最高的数字
+
+        var nums = [23, 666, 666, 1, 55, 666, 55, 420];
+
+        let obj = {};
+
+        for (var i = 0; i < nums.length; i++) {
+            if (obj[nums[i]] === undefined) {
+                obj[nums[i]] = 1
+            } else {
+                obj[nums[i]]++
+            }
+        }
+        let result = {}
+        for (const key in obj) {
+            if (Object.hasOwnProperty.call(obj, key)) {
+                const element = obj[key];
+                if (element > result.times || !result.times) {
+                    result = {
+                        number: key,
+                        times: element
+                    }
+                }
+            }
+        }
+        
+        console.log(result)
+
+    </script>
+</body>
+
+</html>

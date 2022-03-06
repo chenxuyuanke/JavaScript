@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 去除图片的3px */
+        img {
+            vertical-align: top;
+        }
+
+        /* 容器样式 */
+        .mouse {
+            width: 350px;
+            height: 350px;
+            top: 100px;
+            left: 100px;
+            border: 1px solid #ccc;
+            position: relative;
+            border: 1px solid;
+        }
+
+        /* 大鼠标盒子样式 */
+        .mouseBigSize {
+            width: 450px;
+            height: 450px;
+            position: absolute;
+            top: 100px;
+            left: 500px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            /* display: none; */
+        }
+
+        /* 大鼠标盒子里面图片样式 */
+        .mouseBigImg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(./images/mouseBigSize.jpg) no-repeat 0 0;
+            width: 450px;
+            height: 450px;
+        }
+
+        /* 遮罩层样式 */
+        .mask {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+    <!-- 小鼠标 -->
+    <div class="mouse">
+        <img src="./images/mouse.jpg" alt="">
+        <!-- 遮罩层 -->
+        <div class="mask"></div>
+    </div>
+    <!-- 大鼠标 -->
+    <div class="mouseBigSize">
+        <div class="mouseBigImg"></div>
+        <!-- <img class="mouseBigImg" src="./images/mouseBigSize.jpg" alt=""> -->
+    </div>
+    <!-- </div> -->
+    <script>
+        const mouse = document.querySelector('.mouse')
+
+        const mask = mouse.querySelector('.mask')
+
+        const mouseBigSize = document.querySelector('.mouseBigSize')
+
+        const mouseBigImg = mouseBigSize.querySelector('.mouseBigImg')
+
+
+        // const style = getComputedStyle(mask)
+
+        // let maskHeight = style.height;
+        // let maskWeight = style.wight;
+
+        // let maskTop;
+        // let maskLeft;
+
+        mouse.onmouseover = function (e) {
+
+            mask.style.display = "block";
+            mouseBigSize.style.display = "block";
+
+        }
+        // 给小盒子添加mouseout事件
+        mouse.onmouseout = function () {
+            mask.style.display = "none";
+            mouseBigSize.style.display = "none";
+        }
+
+        const style = getComputedStyle(mask)
+
+        let maskTop = parseInt(style.left);
+        let maskLeft = parseInt(style.top);
+
+        let maskHeight = parseInt(style.height);
+        let maskWidth = parseInt(style.width);
+
+
+
+        mouse.onmousemove = function (e) {
+
+            let finalTop = e.clientY - this.offsetTop - maskHeight / 2
+            let finalLeft = e.clientX - this.offsetLeft - maskWidth / 2;
+
+            if (finalTop <= 0) {
+                finalTop = 0;
+            } else if (finalTop >= 250) {
+                finalTop = 250;
+            }
+            if (finalLeft <= 0) {
+                finalLeft = 0;
+            } else if (finalLeft >= 250) {
+                finalLeft = 250;
+            }
+
+            // let finalTop = e.offsetY - maskHeight / 2
+            // let finalLeft = e.offsetX - maskWidth / 2
+
+            mask.style.top = finalTop + 'px';
+
+            mask.style.left = finalLeft + 'px';
+
+            // console.log(e.target.className, finalTop, finalLeft)
+
+            // const bigStyle = getComputedStyle(mouseBigImg)
+
+            let beiX = mouseBigSize.offsetWidth / mouse.offsetWidth
+
+            let beiY = mouseBigSize.offsetHeight / mouse.offsetHeight
+
+            console.log(beiX, beiY)
+
+
+            // mouseBigImg.style.top = - finalTop * beiY + 'px'
+            // mouseBigImg.style.left = - finalLeft * beiX + 'px'
+
+
+            mouseBigImg.style.backgroundPositionY = -finalTop * beiY + 'px'
+            mouseBigImg.style.backgroundPositionX = -finalLeft * beiX + 'px'
+        }
+    </script>
+</body>
+
+</html>

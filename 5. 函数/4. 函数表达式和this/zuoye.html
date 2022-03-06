@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [2, 3, 4, 1, 55, 34, 37, 29]
+
+        // function count(arr, codtion) {
+        //     var sum = 0;
+        //     for (i = 0; i < arr.length; i++) {
+        //         codtion(arr[i]) && sum++;
+        //     }
+        //     return sum
+        // }
+
+        // function dayu7(n) {
+        //     if (n > 7) {
+        //         return true
+        //     }
+        //     return false
+        // }
+
+        // console.log(count(arr,dayu7))
+        var arr = [{age:12},{age:5},{age:2},{age:18},{age:199}]
+        
+        function sort(arr, fangshi) {
+            for (let i = 0; i < arr.length ; i++) {
+                for (let j = i; j < arr.length ; j++) {
+                    if (fangshi(arr[i], arr[j]) > 0) {
+                        var temp = arr[i]
+                        arr[i] = arr[j]
+                        arr[j] = temp
+                    }
+                }
+
+            }
+        }
+        sort(arr, function (a, b) {
+            return a.age - b.age
+        });
+    </script>
+</body>
+
+</html>

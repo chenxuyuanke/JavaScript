@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      p {
+        font-size: 2em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>倒计时：<span id="time">60</span></p>
+    <p>点击数：<span id="times">0</span></p>
+    <p>
+      <button class="start">点击</button>
+      <button class="reset">重置</button>
+    </p>
+    <script>
+      var start = document.getElementsByClassName("start")[0];
+      var reset = document.getElementsByClassName("reset")[0];
+      var times = document.getElementById("times");
+      var time = document.getElementById("time");
+      var timeNum = 60,
+        timesNum = 0;
+
+      start.onclick = function () {};
+
+      function seTimesNum(n) {
+        times.innerText = n;
+      }
+
+      function startClock() {
+        var timer = setInterval(function () {
+          timeNum--;
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

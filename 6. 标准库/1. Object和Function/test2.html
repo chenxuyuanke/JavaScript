@@ -11,14 +11,18 @@
 <body>
     <script>
         function MyNumber(n) {
-            // ....
-            this.toString = function() {
+            // 实例方法
+            this.toString = function () {
                 return "" + n;
             }
         }
-
+        // 静态方法
+        // MyNumber.toString = function (n) {
+        //     return "" + n;
+        // }
+            
         var obj = new MyNumber(123);
-        console.log(MyNumber.toString());
+        console.log(MyNumber.toString()+'2');
     </script>
 </body>
 

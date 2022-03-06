@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            float: left;
+        }
+
+        .score {
+            float: left;
+            position: relative;
+            width: 100px;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            font-family: "Microsoft YaHei";
+            font-size: 14px;
+            left: 0;
+            top: 0;
+        }
+
+        .scoreDisplay {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./images/empty.png" alt="0" data-pj="很差">
+        <img src="./images/empty.png" alt="1" data-pj="较差">
+        <img src="./images/empty.png" alt="2" data-pj="一般">
+        <img src="./images/empty.png" alt="3" data-pj="较好">
+        <img src="./images/empty.png" alt="4" data-pj="很好">
+    </div>
+    <div class="score">
+        <span></span>
+    </div>
+    <script>
+        // 还有一种是事件委托
+        let imgs = document.getElementsByTagName("img");
+        let span = document.querySelector(".score span");
+        let container = document.querySelector(".container");
+
+        let index = -1;
+
+        container.onmouseover = function (e) {
+            if (e.target.tagName === 'IMG') {
+                span.innerText = e.target.dataset.pj || ''
+                span.className = 'scoreDisplay'
+                var arr =Array.from(e.target.parentElement.children)
+                // var arr = [].slice.call(e.target.parentElement.children)
+                var len=arr.indexOf(e.target)
+                arr.forEach(function(it,i){
+                    if(i<=len){
+                        it.src='./images/shining.png'
+                    }else{
+                        it.src='./images/empty.png'
+
+                    }
+                })
+            }
+           
+        }
+        container.onclick = function (e) {
+            if (e.target.tagName === 'IMG') {
+                index =Array.from(e.target.parentElement.children).indexOf(e.target)
+
+            }
+        }
+        // let imgs = document.getElementsByTagName("img");
+        // let span = document.getElementsByTagName("span");
+        // let container = document.querySelector(".container");
+        // for (let i = 0; i < imgs.length; i++) {
+        //     imgs[i].onmouseenter=function(e){
+        //         console.log(i)
+        //         // index=i
+        //         for (let j = 0; j <= i; j++) {
+        //             imgs[j].src='./images/shining.png'
+        //             // span[j].style.display='none'                    
+        //         }
+        //         span[i].style.display='inline-block'
+        //     }
+        //     imgs[i].onmouseleave=function(e){
+        //         imgs[i].src='./images/empty.png'
+        //         span[i].style.display='none'                    
+
+        //     }
+        //     imgs[i].onclick=function(e){
+        //         index=i               
+        //     }
+        // }
+        // container.onmouseleave=function(e){
+        //     if(index===-1){
+        //         for (let j = 0; j < imgs.length; j++) {
+        //             imgs[j].src='./images/empty.png'                    
+        //         }
+        //     }else{
+        //         for (let j = 0; j <= index; j++) {
+        //             imgs[j].src='./images/shining.png' 
+        //         }
+        //         span[index].style.display='inline-block'
+
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

@@ -10,14 +10,19 @@
 
 <body>
     <script>
-        function test(){
+        var obj = {
+            a: 123
+        }
+        function test() {
             console.log(this);
         }
 
         var b = test;
 
         b();
-
+        test();
+        obj.b = test;
+        obj.b();
     </script>
 </body>
 

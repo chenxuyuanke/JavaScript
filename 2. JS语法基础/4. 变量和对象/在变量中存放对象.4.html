@@ -12,7 +12,7 @@
     <script>
         var user = {
             account: "abc",
-            pwd: "123456",
+            '车呢': "123456",
             gender: "男",
             isVip: false,
             age: 18,
@@ -22,9 +22,11 @@
             }
         };
         //用属性表达式读取用户的性别属性
-        var prop = "account";
+        var prop = "isVip";
         // console.log(user.gender);
         console.log(user[prop]);
+        console.log(user);
+
     </script>
 </body>
 

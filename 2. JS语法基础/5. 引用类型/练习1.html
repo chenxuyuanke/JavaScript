@@ -21,18 +21,56 @@
             color: "red" //马的颜色
         };
 
-        var horse2 = horse1;
+        var horse2 = { 
+            ...horse1,
+            position:{
+                ...horse1.position
+            }
+         };
         horse2.position.x = 7;
 
-        var horse3 = horse1;
+        var horse3 = { ...horse1 };
         horse3.name = "馬";
         horse3.position.y = 0;
         horse3.color = "black";
 
-        var horse4 = horse3;
+        var horse4 = { ...horse3 };
         horse4.position.x = 7;
 
-        console.log(horse1.color, horse2.color, horse3.color, horse4.color);
+        // {
+        //     name: "马",
+        //     position: { //马在棋盘上的位置
+        //         x: 7,
+        //         y: 0
+        //     },
+        //     color: "red" //马的颜色
+        // };
+        // {
+        //     name: "马",
+        //     position: { //马在棋盘上的位置
+        //         x: 7,
+        //         y: 9
+        //     },
+        //     color: "red" //马的颜色
+        // };
+        // {
+        //     name: "馬",
+        //     position: { //马在棋盘上的位置
+        //         x: 7,
+        //         y: 0
+        //     },
+        //     color: "红" //马的颜色
+        // };
+
+        // {
+        //     name: "馬",
+        //     position: { //马在棋盘上的位置
+        //         x: 7,
+        //         y: 0
+        //     },
+        //     color: "红" //马的颜色
+        // };
+        console.log(horse1, horse2, horse3, horse4);
     </script>
 </body>
 

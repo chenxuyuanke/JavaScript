@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 3. 利息计算器
+
+    设置变量，分别存放本金、月数、年利率，计算利息
+
+    如果本金存放量超过了10万，年利率上浮20%（比如，年利率为4%，上浮后的年利率 4% * 1.2） -->
+
+    <script>
+        var capital = 10000000;
+        var months = 12;
+        var rate = 4;
+        capital >= 1000000 && (rate = rate * 1.2);
+        var interest = capital * rate / 100 * months
+        console.log(rate)
+    </script>
+</body>
+
+</html>

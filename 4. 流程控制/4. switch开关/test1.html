@@ -10,22 +10,45 @@
 
 <body>
     <script>
-        var x = 20;
+        // var x = 20;
+        // switch (x) {
+        //     case 1:
+        //         console.log("1");
+        //         break;
+        //     case 20:
+        //         console.log("20");
+        //         break;
+        //     case 30:
+        //         console.log("30");
+        //         break;
+        //     default:
+        //         console.log("default");
+        //         break;
+        // }
+
+
+        var x = prompt('您的性别');
+
         switch (x) {
-            case 1:
-                console.log("1");
+            case null:
+                console.log("请输入您的性别");
+
                 break;
-            case 20:
-                console.log("20");
+            case "男":
+                console.log("男");
+
                 break;
-            case 30:
-                console.log("30");
+            case "女":
+                console.log("女");
+
                 break;
+
             default:
-                console.log("default");
+                console.log("请输入正确性别");
+
                 break;
         }
-        
+
     </script>
 </body>
 

@@ -10,31 +10,31 @@
 
 <body>
     <script>
-        // function test(){
-        //     console.log(this);
-        // }
-
+        +function test(){
+            console.log(this);
+        }
+        test()
         // var b = test;
         // var arr = [b, test];
         // arr[0]();
 
-        var obj = {
-            a: function() {
-                console.log(this);
-            },
-            b: {
-                x: 2342,
-                func: function() {
-                    console.log(this);
-                }
-            }
-        };
+        // var obj = {
+        //     a: function() {
+        //         console.log(this);
+        //     },
+        //     b: {
+        //         x: 2342,
+        //         func: function() {
+        //             console.log(this);
+        //         }
+        //     }
+        // };
 
         // obj.a();
         // var b = obj.a;
         // b();
 
-        obj.b.func();
+        // obj.b.func();
     </script>
 </body>
 

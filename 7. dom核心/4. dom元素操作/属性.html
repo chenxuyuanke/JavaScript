@@ -34,7 +34,8 @@
         </textarea>
     </p>
     <div data-abc="123" data-bcd="234">
-
+213
+<!-- asda -->
     </div>
     <script>
         var input = document.querySelector("input[type=text]");
@@ -57,6 +58,24 @@
             }
             img.src = i + ".jpg";
         }
+
+        var oDiv = document.getElementsByTagName('div')[0];
+
+        // console.log(oDiv.getAttribute('abc'))
+        oDiv.removeAttribute('abc')
+        console.log(oDiv.dataset.abc)
+
+
+        // // console.log(oDiv.innerText)
+        // // console.log(oDiv.textContent)
+
+        // // delete oDiv;
+        // // console.log(oDiv)
+        // // 无效
+
+        // var cloneDiv=oDiv.cloneNode()
+        // console.log(cloneDiv)
+
     </script>
 </body>
 

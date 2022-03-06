@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 1. 找到某个字符串中出现最多的字符，打印字符和它出现的次数 -->
+
+    <script>
+        var s = "absadfgsDfafgsdfgsdfgsadfasdasvasdfsadfasdfa";
+
+        // function getStringMaxLetter(string) {
+
+        //     var arr = string.split('')
+
+        //     var obj = {
+
+        //     }
+
+        //     arr.forEach(item => {
+
+        //         obj[item] ? obj[item]++ : obj[item] = 1
+        //     })
+
+        //     console.log(obj, arr)
+
+        //     let maxLetterKey = arr[0]
+
+        //     for (const key in obj) {
+        //         if (Object.hasOwnProperty.call(obj, key)) {
+
+        //             const element = obj[key];
+
+        //             obj[maxLetterKey] < element && (maxLetterKey = key)
+        //         }
+        //     }
+
+        //     return [maxLetterKey, obj[maxLetterKey]]
+        // }
+
+        // console.log(getStringMaxLetter(s))
+
+    </script>
+
+    <script>
+        // var s = "absadfgsDfafgsdfgsdfgsadfasdasvasdfsadfasdfa";
+
+        function getStringMaxLetter(string) {
+
+            var arr = string.split('')
+
+            var obj = {
+
+            }
+
+            arr.forEach(item => {
+
+                obj[item] ? obj[item]++ : obj[item] = 1
+            })
+
+            console.log(obj, arr)
+
+            let maxLetterObj;
+
+            for (const key in obj) {
+                if (Object.hasOwnProperty.call(obj, key)) {
+                    const element = obj[key];
+
+                    if (!maxLetterObj || maxLetterObj.letter < element) {
+                        maxLetterObj = {
+                            letter: key,
+                            times: element
+                        }
+                    }
+
+                }
+            }
+
+            return maxLetterObj
+        }
+        console.log(s)
+        console.log(getStringMaxLetter(s))
+
+    </script>¸
+</body>
+
+</html>

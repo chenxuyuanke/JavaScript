@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lianxi.js"></script>
+</head>
+
+<body>
+    <script>
+        var n = prompt();
+        
+
+        function ggg(n) {
+            if (n > 2 && !isOdd(n)) {
+                // console.log('大于2的偶数')
+                for (i = 1; i < n; i++) {
+                    // console.log(i,n,n - i)
+
+                    if (isPrime(i) && isPrime(n - i)) {
+                        return true
+                    }
+                }
+                return flase
+            }
+        }
+        var flag = ggg(n);
+        console.log(flag);
+    </script>
+</body>
+
+</html>

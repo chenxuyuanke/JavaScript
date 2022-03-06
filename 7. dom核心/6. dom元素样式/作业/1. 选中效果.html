@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        body{
+        body {
             margin: 0;
         }
-        header{
+
+        header {
             width: 100%;
             background: #333;
             color: #eee;
         }
-        nav{
+
+        nav {
             overflow: hidden;
         }
-        span{
+
+        span {
             float: left;
             line-height: 50px;
             margin: 0 15px;
             cursor: pointer;
         }
 
-        span.active{
+        span.active {
             color: gold;
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -41,5 +46,19 @@
             <span>Tempora!</span>
         </nav>
     </header>
+    <script>
+        var oSpan = Array.from(document.querySelector('nav').children)
+
+        oSpan.forEach(span => {
+            span.onclick = function () {
+                oSpan.forEach(item => {
+                    item.classList=[]
+                })
+                span.classList.add('active')
+            }
+        })
+
+    </script>
 </body>
+
 </html>

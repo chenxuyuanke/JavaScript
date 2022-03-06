@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <p>
         利用pokers文件夹中的图片，用纯JS生成图片依次排列到页面上。不允许使用样式表
     </p>
+    <div class="container"></div>
+    <script>
+        var oDiv = document.querySelector('.container')
+        var oUl = document.createElement('ul');
+
+        for (let index = 1; index < 16; index++) {
+            if (index === 15 || index === 14) {
+                var oLi = document.createElement('li');
+                oLi.innerHTML = `<img src='./pokers/${index}_1.jpg' />`
+                oUl.appendChild(oLi)
+            } else {
+                for (let tip = 1; tip <= 4; tip++) {
+                    var oLi = document.createElement('li');
+                    oLi.innerHTML = `<img src='./pokers/${index}_${tip}.jpg' />`
+                    oUl.appendChild(oLi)
+
+                }
+
+            }
+
+        }
+        oDiv.appendChild(oUl)
+    </script>
 </body>
+
 </html>

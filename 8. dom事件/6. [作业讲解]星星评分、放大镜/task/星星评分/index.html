@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #divstars {
+            font-size: 0px;
+        }
+
+        .left {
+            float: left;
+            margin-left: 10px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divstars" class="left">
+        <img src="images/empty.png" alt="">
+        <img src="images/empty.png" alt="">
+        <img src="images/empty.png" alt="">
+        <img src="images/empty.png" alt="">
+        <img src="images/empty.png" alt="">
+    </div>
+    <div id="divword" class="left">
+
+    </div>
+
+    <script>
+        var words = ["满意", "一般满意", "还不错", "很满意", "非常满意"];
+        var divstars = document.getElementById("divstars");
+        var divword = document.getElementById("divword");
+        var star = -1; //记录评分，点击的是第几个星星
+        var starsArr = Array.from(divstars.children);
+
+        divstars.onmouseover = function (e) {
+            // console.log(e.target.nodeName)
+            if (e.target.nodeName.toLowerCase() === 'img') {
+                var index = starsArr.indexOf(e.target)
+                starsArr.forEach((img, i) => {
+                    if (i <= index) {
+                        img.src = 'images/shining.png'
+                    } else {
+                        img.src = 'images/empty.png'
+                    }
+                })
+                divword.innerText = words[index]
+                divstars.onclick = function (e) {
+                    star = index;
+                }
+            }
+
+        }
+
+        divstars.onmouseleave = function () {
+            starsArr.forEach((img, i) => {
+                if (i <= star) {
+                    img.src = 'images/shining.png'
+                } else {
+                    img.src = 'images/empty.png'
+                }
+            })
+            divword.innerText = words[star]
+        }
+    </script>
+</body>
+
+</html>

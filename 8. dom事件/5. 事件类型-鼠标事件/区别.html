@@ -22,13 +22,13 @@
         var div = document.querySelector("div")
         var btn = document.querySelector("button")
 
-        div.onmouseenter = function(e){
-            console.log("鼠标进入：enter", e)
-        }
+        // div.onmouseenter = function(e){
+        //     console.log("鼠标进入：enter", e)
+        // }
 
-        div.onmouseleave = function(e){
-            console.log("鼠标离开：leave", e)
-        }
+        // div.onmouseleave = function(e){
+        //     console.log("鼠标离开：leave", e)
+        // }
 
         // btn.onmouseover = function(e){
         //     e.stopPropagation();
@@ -36,13 +36,13 @@
         // btn.onmouseout = function(e){
         //     e.stopPropagation();
         // }
-        // div.onmouseover = function(){
-        //     console.log("进入：over");
-        // }
+        div.onmouseover = function(){
+            console.log("进入：over");
+        }
 
-        // div.onmouseout = function(){
-        //     console.log("离开：out");
-        // }
+        div.onmouseout = function(){
+            console.log("离开：out");
+        }
     </script>
 </body>
 </html>

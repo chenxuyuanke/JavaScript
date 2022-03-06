@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        p.error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>不能添加空的文本</p>
+        <div class="input">
+            <input type="text">
+            <button id="btnAdd">添加</button>
+        </div>
+        <ul class="list">
+            <li>项目1</li>
+            <li>项目2</li>
+        </ul>
+    </div>
+    <script>
+        var btnAdd = document.getElementById('btnAdd')
+        var inp = document.querySelector('.input input')
+        var oUl = document.querySelector('.list')
+        var oP = document.querySelector('.container p')
+
+        btnAdd.onclick = function (e) {
+            if (inp.value.trim()) {
+                var newLi = oUl.children[0].cloneNode(true)
+                newLi.innerText = inp.value;
+                // console.log(newLi)
+                oUl.appendChild(newLi)
+                inp.value = ''
+            } else {
+                // console.log(oP.classList)
+                // oP.classList.add('error')
+                oP.className ='error'
+            }
+
+        }
+    </script>
+</body>
+
+</html>

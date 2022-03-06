@@ -12,12 +12,23 @@
     <script>
         function test() {
             console.log(arguments);
-            //将arguments转换为真数组
-            var newArr = [].slice.call(arguments)
-            console.log(newArr);
+            // //将arguments转换为真数组
+            // var newArr = [].slice.call(arguments)
+            // console.log(newArr);
+
+            arguments.pop = [].pop.bind(arguments);
+            arguments.pop()
+            arguments.pop()
+            arguments.pop()
+
+            console.log(arguments);
+
         }
 
         test(23, 5, 6, 2, 233, 5, 6, 7);
+
+        console.log(test.call === Function.call); // true
+
     </script>
 </body>
 

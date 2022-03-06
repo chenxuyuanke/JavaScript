@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            overflow: hidden;
+            border: 2px solid;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            line-height: 200px;
+            text-align: center;
+            font-size: 100px;
+            font-family: 宋体;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        袁
+    </div>
+    <p>
+        <button class="big">放大</button>
+        <button class="small">缩小</button>
+    </p>
+
+    <script>
+        var container = document.querySelector('div.container');
+        var bigBtn = document.getElementsByClassName('big')[0];
+        var smallBtn = document.getElementsByClassName('small')[0];
+        var containerSty = window.getComputedStyle(container)
+
+        bigBtn.onclick = function () {
+            if (parseInt(containerSty.fontSize) >= 180) return;
+            container.style.fontSize = parseInt(containerSty.fontSize) * 1.2 + 'px'
+        }
+
+        smallBtn.onclick = function () {
+            container.style.fontSize = parseInt(containerSty.fontSize) / 1.2 + 'px'
+
+        }
+    </script>
+</body>
+
+</html>

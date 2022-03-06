@@ -18,11 +18,14 @@
 
         // 输出： 我叫xxx，今年xxx岁了，性别是xxx，目前已成年（未成年）
         console.log("我叫" + user.name +
-            "，今年" + user.age +
-            "岁了，性别是" + user.gender +
+            "\n，今年" + user.age +
+            "\t岁了，性别是" + user.gender +
             "，目前" + (user.age >= 18 ? "已成年" : "未成年"));
 
-        console.log(`我叫${user.name}，今年${user.age}岁了，性别是${user.gender}，目前${user.age>=18?"已成年":"未成年"}`);
+        console.log(`我叫${user.name}，
+          今年${user.age}岁了，
+             性别是${user.gender}，
+           目前${user.age>=18?"已成年":"未成年"}`);
     </script>
 </body>
 

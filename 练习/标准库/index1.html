@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 编写一个函数，用于返回一个友好的日期字符串格式
+
+        // 年 - 月 - 日 时: 分: 秒
+        // let nowDate = new Date()
+        // function getDateStr(date) {
+        //     return `${date.getFullYear()}年-${date.getMonth() + 1}月-${date.getDate()}月 ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+        // }
+        // console.log(getDateStr(nowDate))
+        // console.log(nowDate.toDateString())
+        // console.log(nowDate.toLocaleString())
+
+        // 2. 给定用户的生日（年、月、日），计算该用户的年龄
+
+        function getAge(year, month, date) {
+            return Math.floor((new Date() - new Date(year, month - 1, date)) / 60 / 60 / 24 / 30 / 12 / 1000) + 1
+        }
+
+        // 3. 根据系统当前的月份，输出这一个月每一天的星期
+
+        // 2019年6月1日：星期六
+        // 2019年6月2日：星期日
+        // .....
+        // 2019年6月30日：星期日
+        // let nowDate = new Date();
+        function getDayStr() {
+            let nowDate = new Date()
+            let year = nowDate.getFullYear()
+            let month = nowDate.getMonth() + 1
+            let oldDate = new Date(year, month, 0);
+            let date = oldDate.getDate()
+            // console.log(date)
+
+            for (let i = 1; i <= date; i++) {
+                console.log(`${year}年${month}月${i}日: ${getDayOfWeek(year,month,i)}`)
+            }
+        }
+        function getDayOfWeek(year, month, day) {
+            var d = new Date(year, month - 1, day);
+            var day = d.getDay(); //得到星期
+            switch (day) {
+                case 0:
+                    return "日";
+                case 1:
+                    return "一";
+                case 2:
+                    return "二";
+                case 3:
+                    return "三";
+                case 4:
+                    return "四";
+                case 5:
+                    return "五";
+                case 6:
+                    return "六";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

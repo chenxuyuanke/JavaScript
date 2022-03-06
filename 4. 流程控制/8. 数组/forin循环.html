@@ -10,11 +10,12 @@
 
 <body>
     <script>
-        // var obj = {
-        //     a: 1,
-        //     b: 32,
-        //     c: "asd"
-        // };
+        var obj = {
+            a: 1,
+            b: 32,
+            c: "asd",
+            d: null
+        };
 
         // for (var prop in obj) {
         //     console.log(prop);
@@ -23,12 +24,19 @@
         // 利用该特点，可以实现数组的遍历
         var arr = ["abc", "bcd", "234", , , , 54, 2, 1];
         console.log(arr);
-        // for (var i = 0; i < arr.length; i++) {
-        //     console.log(arr[i]);
-        // }
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
 
         for (var index in arr) {
             console.log(index, typeof index, arr[index]);
+        }
+
+        for (const key in obj) {
+            if (Object.hasOwnProperty.call(obj, key)) {
+                const element = obj[key];
+                console.log(element)
+            }
         }
     </script>
 </body>

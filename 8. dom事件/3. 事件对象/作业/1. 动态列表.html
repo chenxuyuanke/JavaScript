@@ -11,9 +11,9 @@
 <body>
     <p>
         <input type="text">
-        <button>添加</button>
+        <button id="add">添加</button>
     </p>
-    <ul>
+    <ul >
         <li>
             <span>列表1</span>
             <button>删除</button>
@@ -24,9 +24,24 @@
         </li>
         <li>
             <span>列表3</span>
-            <button>删除</button>
+            <button class="shanchu">删除</button>
         </li>
     </ul>
+    <script>
+        var addBtn=document.querySelector('#add')
+        var oUl=document.querySelector('ul')
+        addBtn.addEventListener('click',function(){
+            var oli=document.createElement('li')
+            oli.innerHTML=`<span>列表${oUl.children.length+1}</span><button>删除</button>`
+            oUl.appendChild(oli)            
+        })
+        oUl.onclick=function(e){
+            console.log(e)
+            if(e.target.tagName==='BUTTON'){
+                e.target.parentElement.remove()
+            }
+        }
+    </script>
 </body>
 
 </html>

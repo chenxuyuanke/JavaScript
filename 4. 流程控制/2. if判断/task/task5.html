@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 5. 编写一个用户和计算机猜拳的游戏，用户输入剪刀、石头或布，与计算机的出拳进行比较，判断胜负 -->
+
+    <script>
+        let user = window.prompt('输入剪刀、石头或布');
+        let computer, result;
+        if (Math.random() < 1 / 3) {
+            computer = '剪刀'
+        } else if (Math.random() < 2 / 3) {
+            computer = '石头'
+        } else if (Math.random() < 1) {
+            computer = '剪刀'
+        }
+
+        if (user !== "剪刀" && user !== "石头" && user !== "布") {
+            user = null
+        } else {
+            if (user === computer) {
+                result = '平局'
+            } else if ((user === '剪刀' && computer === '布') || (user === '布' && computer === '石头') || (user === '石头' && computer === '剪刀')) {
+                result = '用户赢'
+            } else {
+                result = '电脑赢'
+            }
+        }
+
+
+        // if (user === "剪刀" || user === "石头" || user === "布") {
+        //     if (user === computer) {
+        //         result = '平局'
+        //     } else if ((user === '剪刀' && computer === '布') || (user === '布' && computer === '石头') || (user === '石头' && computer === '剪刀')) {
+        //         result = '用户赢'
+        //     } else {
+        //         result = '电脑赢'
+        //     }
+        // } else {
+        //     user = null
+        // }
+
+
+
+        user ? console.log(`用户出${user}，电脑出${computer}，${result}`) : console.log('请输入剪刀、石头或布')
+    </script>
+</body>
+
+</html>

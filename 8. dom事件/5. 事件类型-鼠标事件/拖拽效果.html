@@ -32,42 +32,21 @@
     </div>
 
     <script>
-        var div = document.querySelector("div");
-        div.onmousedown = function(e) {
-            if (e.button !== 0) { //如果不是鼠标左键
-                return;
-            }
-            var pageX = e.pageX;
-            var pageY = e.pageY;
-            var style = getComputedStyle(div);
-            var divLeft = parseFloat(style.left);
-            var divTop = parseFloat(style.top);
-            window.onmousemove = function(e) {
-                var disX = e.pageX - pageX;
-                var disY = e.pageY - pageY;
-                div.style.left = divLeft + disX + "px";
-                div.style.top = divTop + disY + "px";
-            }
-            window.onmouseup = window.onmouseleave = function(e) {
-                if (e.button === 0) {
-                    window.onmousemove = null; //移除鼠标移动事件
-                }
-            }
-        }
-
         // var div = document.querySelector("div");
-        // var style = getComputedStyle(div);
-        // var divLeft = parseFloat(style.left);
-        // var divTop = parseFloat(style.top);
         // div.onmousedown = function(e) {
         //     if (e.button !== 0) { //如果不是鼠标左键
         //         return;
         //     }
+        //     var pageX = e.pageX;
+        //     var pageY = e.pageY;
+        //     var style = getComputedStyle(div);
+        //     var divLeft = parseFloat(style.left);
+        //     var divTop = parseFloat(style.top);
         //     window.onmousemove = function(e) {
-        //         divLeft += e.movementX;
-        //         divTop += e.movementY;
-        //         div.style.left = divLeft + "px";
-        //         div.style.top = divTop + "px";
+        //         var disX = e.pageX - pageX;
+        //         var disY = e.pageY - pageY;
+        //         div.style.left = divLeft + disX + "px";
+        //         div.style.top = divTop + disY + "px";
         //     }
         //     window.onmouseup = window.onmouseleave = function(e) {
         //         if (e.button === 0) {
@@ -75,6 +54,30 @@
         //         }
         //     }
         // }
+
+        var div = document.querySelector("div");
+        var style = getComputedStyle(div);
+        var divLeft = parseFloat(style.left);
+        var divTop = parseFloat(style.top);
+        div.onmousedown = function (e) {
+            if (e.button !== 0) { //如果不是鼠标左键
+                return;
+            }
+            window.onmousemove = function (e) {
+               
+                divLeft += e.movementX;
+                divTop += e.movementY;
+                div.style.left = divLeft + "px";
+                div.style.top = divTop + "px";
+            }
+            window.onmouseup = window.onmouseleave = function (e) {
+                if (e.button === 0) {
+                    window.onmousemove = null; //移除鼠标移动事件
+                }
+            }
+        }
+        // e.movement 在mac电脑有兼容问题
+        
     </script>
 </body>
 

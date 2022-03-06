@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 累计举例：将1-100的所有奇数相加之和
+        // var count = 0;
+        // for (let i = 0; i <= 5; i++) {
+        //     i % 2 !== 1 || (count += i)
+        // }
+
+        // 查找举例：135~145之间是否存在能整除26的数字
+        // var isHas = false;
+        // for (let i = 135; i <= 165; i++) {
+        //     // i % 26 === 0 && (isHas = true) 
+        //     if(i % 26 === 0){
+        //         isHas = true
+        //     }
+        //     break;
+        // }
+
+        // 1. 在控制台中输出100个 *
+        // var count=0
+        // for (let i = 0; i < 100; i++) {
+        //     console.log('*')
+        //     count ++;
+        // }
+
+        // 2. 让用户输入 * 号的数量，然后输出对应数量的 *
+        // var number = prompt('数量')
+
+        // for (let i = 0; i < number; i++) {
+        //     console.log('*')               
+        // }
+
+        // 3. 输出一个3行5列的 * 号
+        // let str = ''
+        // for (let i = 0; i < 3; i++) {
+        //     for (let j = 0; j < 5; j++) {
+        //         str += '*'
+        //         if (j === 4) {
+        //             str += '\n'
+        //         }
+        //     }
+        // }
+        // console.log(str)
+        // 4. 用 * 号输出一个5行的直角三角形
+
+        // ```
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        // ```
+        // let str = ''
+        // for (let i = 0; i < 6; i++) {
+        //     for (let j = 0; j < i; j++) {
+        //         str += '*'
+        //         if (j === i - 1) {
+        //             str += '\n'
+        //         }
+        //     }
+        // }
+        // console.log(str)
+        // 5. 用 * 号输出一个5行的等腰三角形
+
+        // ```
+        //     *
+        //    ***
+        //   *****
+        //  *******
+        // *********
+        // ```
+
+        // let str = ''
+        // for (let i = 1; i <=5; i++) {
+        //     let max = 5 + i
+        //     let min = 5 - i
+        //     for (let j = 0; j < 11; j++) {
+        //         if (j < max && j > min){
+        //             str+='*' 
+        //         }else{
+        //             str+=' '
+        //         }
+
+        //     }
+        //     str+='\n'
+        // }
+        // console.log(str)
+
+
+        // 11. 判断数字233是不是素数。
+
+        // 素数是指一个数（大于1）仅能被1和自身整除
+        // var num = 5,
+        //     times = 0;
+        // for (let i = 2; i < num; i++) {
+        //     if (num % i === 0) {
+        //         times++;
+        //     }
+        // }
+        // times > 0 && console.log('不是素数')
+        // console.log(times)
+
+        // 13. 求1-100之间的所有素数之和
+
+        // var count = 0;
+        // for (let j = 1; j <= 6; j++) {
+        //     var times = 0;
+        //     for (let i = 2; i < j; i++) {
+        //         if (j % i === 0) {
+        //             times++;
+        //         }
+        //     }
+        //     times === 0 && (count += j)
+        // }
+        // console.log(count)
+
+        // 14. 输出99乘法表，效果如下：
+
+        // ```
+        // 1*1=1	
+        // 1*2=2	2*2=4	
+        // 1*3=3	2*3=6	3*3=9	
+        // 1*4=4	2*4=8	3*4=12	4*4=16	
+        // 1*5=5	2*5=10	3*5=15	4*5=20	5*5=25	
+        // 1*6=6	2*6=12	3*6=18	4*6=24	5*6=30	6*6=36	
+        // 1*7=7	2*7=14	3*7=21	4*7=28	5*7=35	6*7=42	7*7=49	
+        // 1*8=8	2*8=16	3*8=24	4*8=32	5*8=40	6*8=48	7*8=56	8*8=64	
+        // 1*9=9	2*9=18	3*9=27	4*9=36	5*9=45	6*9=54	7*9=63	8*9=72	9*9=81	
+        // ```
+        
+        // var str = '';
+        // for (let i = 1; i <= 9; i++) {
+        //     for (let j = 1; j <= i; j++) {
+        //         str+=`${j}*${i}=${j*i}\t`
+        //     }
+        //     str+='\n'
+        // }
+        // console.log(str)
+
+
+    </script>
+</body>
+
+</html>

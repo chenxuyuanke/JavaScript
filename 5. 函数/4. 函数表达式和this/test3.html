@@ -10,12 +10,13 @@
 
 <body>
     <script>
-        var arr = [34, 45454, "Asdf", {}, function() {
+        var arr = [34, 45454, "Asdf", {}, function () {
             console.log("数组中的函数");
         }];
-        
+
         var func = arr[4];
         func();
+        arr[4]();
     </script>
 </body>
 
