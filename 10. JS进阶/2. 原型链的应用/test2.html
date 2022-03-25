@@ -11,6 +11,11 @@
 <body>
     <script src="../../plugin/helpers.js"></script>
     <script>
+        // this.myPlugin.inherit = function (son, father) {
+        //         son.prototype = Object.create(father.prototype);
+        //         son.prototype.constructor = son;
+        //         son.prototype.uber = father;
+        // }
         function User(firstName, lastName, age) {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -18,17 +23,18 @@
             this.fullName = this.firstName + " " + this.lastName;
         }
 
-        User.prototype.sayHello = function() {
+        User.prototype.sayHello = function () {
             console.log(`大家好，我叫${this.fullName}，今年${this.age}岁了`);
         }
 
         function VIPUser(firstName, lastName, age, money) {
+            // this.uber(firstName, lastName, age)
             User.call(this, firstName, lastName, age);
             this.money = money;
         }
         myPlugin.inherit(VIPUser, User);
 
-        VIPUser.prototype.upgrade = function() {
+        VIPUser.prototype.upgrade = function () {
             console.log(`使用了${100}元软妹币，升级了！`);
             this.money -= 100;
         }

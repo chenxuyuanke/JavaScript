@@ -10,23 +10,26 @@
 
 <body>
     <script>
-        // function User(name, age) {
-        //     this.name = name;
-        //     this.age = age;
-        // }
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sayHello = function () {
+                console.log(this.name, this.age);
+            }
+        }
 
-        // User.prototype.sayHello = function(){
-        //     console.log(this.name, this.age);
-        // }
+        User.prototype.sayHello = function () {
+            console.log(this.name, this.age);
+        }
 
-        // var u1 = new User("abc", 11);
-        // var u2 = new User("bcd", 12);
+        var u1 = new User("abc", 11);
+        var u2 = new User("bcd", 12);
 
-        function A() {}
+        // function A() { }
         // A.prototype.toString = function() {
         //     return "123";
         // }
-        var obj = new A();
+        // var obj = new A();
 
         // var A = new Function();
 

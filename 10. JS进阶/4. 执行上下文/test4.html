@@ -15,19 +15,27 @@
         function A(a, b) {
             console.log(a, b, g1);
             var b = 123;
-            
 
-            function b() {}
 
-            var a = function() {}
+            function b() { }
+
+            var a = function () { }
 
             console.log(a, b);
         }
         var g2 = 456;
 
-        var g3 = function() {}
+        var g3 = function () { }
 
         A(1, 2);
+
+        // a：1
+        // b: fb
+        // g1：123
+
+         // a：fn
+        // b: 123
+        // g1：123
     </script>
 </body>
 

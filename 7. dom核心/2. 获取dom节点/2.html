@@ -15,36 +15,56 @@
 
     <div name="n">asdfasdfasf</div>
 
-    <ul>
+    <ul class="list">
         <li>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur reprehenderit nobis expedita quibusdam nulla sapiente amet nam iusto id neque in, laborum optio repellendus rerum quos est laboriosam tempore cum?</div>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur reprehenderit nobis expedita
+                quibusdam nulla sapiente amet nam iusto id neque in, laborum optio repellendus rerum quos est laboriosam
+                tempore cum?</div>
         </li>
         <li>
-            <div>Quos, quibusdam nobis consectetur quis quae maxime ad culpa eligendi ut, nisi totam, assumenda magni adipisci fugiat rem beatae minima aliquam odio vitae earum deleniti! Consectetur perferendis distinctio reiciendis! Magnam!</div>
+            <div>Quos, quibusdam nobis consectetur quis quae maxime ad culpa eligendi ut, nisi totam, assumenda magni
+                adipisci fugiat rem beatae minima aliquam odio vitae earum deleniti! Consectetur perferendis distinctio
+                reiciendis! Magnam!</div>
         </li>
         <li>
-            <div>Mollitia iure tempora rem nemo dignissimos necessitatibus, modi est harum amet cumque? Facere eaque provident excepturi, labore blanditiis voluptatibus cumque autem sed beatae atque eos tenetur, quasi, quidem rem vel?</div>
+            <div>Mollitia iure tempora rem nemo dignissimos necessitatibus, modi est harum amet cumque? Facere eaque
+                provident excepturi, labore blanditiis voluptatibus cumque autem sed beatae atque eos tenetur, quasi,
+                quidem rem vel?</div>
         </li>
         <li>
-            <div>Nisi consequatur eveniet ea? Nesciunt, laborum minima soluta quasi facilis eligendi aspernatur accusamus quod quidem corporis perferendis ut accusantium? Inventore quam enim sed non nulla aspernatur architecto maxime, sit vitae?</div>
+            <div>Nisi consequatur eveniet ea? Nesciunt, laborum minima soluta quasi facilis eligendi aspernatur
+                accusamus quod quidem corporis perferendis ut accusantium? Inventore quam enim sed non nulla aspernatur
+                architecto maxime, sit vitae?</div>
         </li>
         <li>
-            <div>Natus, hic dolorum? Harum maiores, laudantium error quod quia laborum. Fugit reiciendis ipsum cumque placeat numquam asperiores optio harum quibusdam consequatur eveniet doloribus officiis eum earum alias, tenetur vero quis.</div>
+            <div>Natus, hic dolorum? Harum maiores, laudantium error quod quia laborum. Fugit reiciendis ipsum cumque
+                placeat numquam asperiores optio harum quibusdam consequatur eveniet doloribus officiis eum earum alias,
+                tenetur vero quis.</div>
         </li>
         <li>
-            <div>Eligendi a voluptates alias praesentium libero, necessitatibus deserunt quia est laudantium nihil, at dolorem consequatur esse molestiae totam tempore eos commodi. Tempore, non quo. Autem dignissimos deleniti velit non nulla!</div>
+            <div>Eligendi a voluptates alias praesentium libero, necessitatibus deserunt quia est laudantium nihil, at
+                dolorem consequatur esse molestiae totam tempore eos commodi. Tempore, non quo. Autem dignissimos
+                deleniti velit non nulla!</div>
         </li>
         <li>
-            <div>Ex eveniet in iste esse? Distinctio ratione animi nemo quisquam molestias id similique dignissimos suscipit asperiores? Dignissimos, natus itaque, quod autem aut voluptatum, neque quisquam expedita odit enim laudantium esse.</div>
+            <div>Ex eveniet in iste esse? Distinctio ratione animi nemo quisquam molestias id similique dignissimos
+                suscipit asperiores? Dignissimos, natus itaque, quod autem aut voluptatum, neque quisquam expedita odit
+                enim laudantium esse.</div>
         </li>
         <li>
-            <div>Optio, natus aut. Quas eaque officia, esse facere architecto, quia ut laboriosam commodi exercitationem totam quis voluptas, accusamus dolorum illo. Alias at iste, est hic obcaecati reprehenderit veniam saepe veritatis.</div>
+            <div>Optio, natus aut. Quas eaque officia, esse facere architecto, quia ut laboriosam commodi exercitationem
+                totam quis voluptas, accusamus dolorum illo. Alias at iste, est hic obcaecati reprehenderit veniam saepe
+                veritatis.</div>
         </li>
         <li>
-            <div>Quos soluta provident nisi corporis mollitia harum distinctio laborum doloremque? Aperiam quam corrupti deserunt odit voluptates iusto nemo officiis dolor consequatur maxime molestiae minus in totam, quia quibusdam modi laudantium!</div>
+            <div>Quos soluta provident nisi corporis mollitia harum distinctio laborum doloremque? Aperiam quam corrupti
+                deserunt odit voluptates iusto nemo officiis dolor consequatur maxime molestiae minus in totam, quia
+                quibusdam modi laudantium!</div>
         </li>
         <li>
-            <div>Veritatis, nisi. In nam, ratione incidunt aut minus quod eius placeat dicta hic! Eum laboriosam error molestiae provident sequi. Labore cumque deleniti corporis commodi quibusdam vero? Excepturi fugit culpa autem.</div>
+            <div>Veritatis, nisi. In nam, ratione incidunt aut minus quod eius placeat dicta hic! Eum laboriosam error
+                molestiae provident sequi. Labore cumque deleniti corporis commodi quibusdam vero? Excepturi fugit culpa
+                autem.</div>
         </li>
     </ul>
     <!-- 使用了window的属性score -->
@@ -64,6 +84,13 @@
 
         var divn = document.getElementsByName("n");
         console.log(divn);
+
+        var oLi = document.getElementsByClassName('list')[0].children
+
+        for (let index = 0; index < oLi.length; index++) {
+            const element = oLi[index];
+            console.log(element)
+        }
     </script>
 </body>
 

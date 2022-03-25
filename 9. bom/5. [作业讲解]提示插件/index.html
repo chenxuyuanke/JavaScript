@@ -18,10 +18,23 @@
     <script src="../../plugin/confirm.js"></script>
     <script>
         var n = 0;
-        document.querySelector("button").onclick = function() {
+        document.querySelector("button").onclick = function () {
             n++;
             //打开一个确认对话框
-            myPlugin.openConfirm("啊手动阀发生法撒法撒阀手动阀");
+            myPlugin.openConfirm({
+                content: '你要关闭吗 ' + n,
+                title: '提示',
+                confirmText: 'OK',
+                cancelText: 'CANCEL',
+                confirmClass: "confirm",
+                cancelClass: 'cancel',
+                oncancel: function () {
+                    console.log('oncancel')
+                },
+                onconfirm: function () {
+                    console.log('onconfirm')
+                }
+            });
         }
     </script>
 </body>

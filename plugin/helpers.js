@@ -12,8 +12,6 @@ this.myPlugin.inherit = (function () {
         son.prototype.constructor = son;
         son.prototype.uber = father.prototype;
     }
-
-
 }());
 /**
  * ES5的方法实现继承
@@ -81,7 +79,7 @@ this.myPlugin.clone = function (obj, deep) {
 
 
 /**
- * 函数防抖
+ * 函数防抖 只执行最后的一次函数,一顿时间后执行
  */
 this.myPlugin.debounce = function (callback, time) {
     var timer;
@@ -90,27 +88,44 @@ this.myPlugin.debounce = function (callback, time) {
         var args = arguments; //利用闭包保存参数数组
         timer = setTimeout(function () {
             callback.apply(null, args);
-            // 再外部调用时可以用bind绑定this
+            // 再外部调用时可以用bind绑定this（提升:内层绑定this）
         }, time);
     }
 }
-
 /**
- * 函数节流
+ * 函数节流 第一种：一段时间内只处理第一次，这段时间内如果之前的没处理完，后面直接不处理（每一次触发要过一段触发）
+ */
+this.myPlugin.debounce = function (callback, time) {
+    var timer;
+    return function () { //返回函数 防止timer污染全局变量
+        if (timer) {
+            return
+        }
+        var args = arguments; //利用闭包保存参数数组
+        timer = setTimeout(function () {
+            callback.apply(null, args);
+            timer = null
+            // 再外部调用时可以用bind绑定this（提升:内层绑定this）
+        }, time);
+    }
+}
+/**
+ * 函数节流 第二种：第一次马上触发，下一次触发要过一段触发
  */
 this.myPlugin.throttle = function (callback, time, immediately) {
     if (immediately === undefined) {
         immediately = true;
     }
+    // immediately = immediately || true
     if (immediately) {
         var t;
         return function () {
-            if (immediately) {
-                if (!t || Date.now() - t >= time) { //之前没有计时 或 距离上次执行的时间已超过规定的值
-                    callback.apply(null, arguments);
-                    t = Date.now(); //得到的当前时间戳
-                }
+            // if (immediately) {
+            if (!t || Date.now() - t >= time) { //之前没有计时 或 距离上次执行的时间已超过规定的值
+                callback.apply(null, arguments);
+                t = Date.now(); //得到的当前时间戳
             }
+            // }
         }
     }
     else {

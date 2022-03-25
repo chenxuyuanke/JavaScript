@@ -1,5 +1,5 @@
-function User() {}
-User.prototype.sayHello = function() {}
+function User() { }
+User.prototype.sayHello = function () { }
 
 var u1 = new User();
 var u2 = new User();
@@ -12,5 +12,6 @@ console.log(User.__proto__ === Function.__proto__); // true
 console.log(u1.__proto__ === u2.__proto__);  // true
 console.log(u1.__proto__ === User.__proto__); // false
 console.log(Function.__proto__ === Object.__proto__); // true
+console.log(User.__proto__ === Object.__proto__); // true
 console.log(Function.prototype.__proto__ === Object.prototype.__proto__); // false
-console.log(Function.prototype.__proto__ === Object.prototype); // true
+console.log(Function.prototype.__proto__ === Object.prototype); // true 

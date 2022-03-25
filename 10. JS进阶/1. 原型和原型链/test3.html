@@ -10,7 +10,7 @@
 
 <body>
     <script>
-        function A() {}
+        function A() { }
 
         var obj1 = new A();
         var obj2 = new A();
@@ -18,7 +18,7 @@
         obj2.__proto__.bcd = 456;
 
         console.log(obj1.abc, obj2.abc);
-        console.log(obj1.__proto__.bcd, obj2.__proto__.bcd);
+        console.log(obj1.bcd, obj2.__proto__.bcd);
     </script>
 </body>
 
