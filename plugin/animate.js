@@ -38,7 +38,7 @@ this.myPlugin.Animate.prototype.start = function () {
         return; //如果之前已经存在计时器，则不做任何处理
     }
     if (this.option.onstart) {
-        this.option.onstart.call(that);
+        this.option.onstart.call(this);
     }
     var that = this;
     this.timer = setInterval(function () {
