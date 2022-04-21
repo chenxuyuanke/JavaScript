@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // var s = "2015-5-1, 2019-6-19, 2000-04-28";
+        //得到每一个日期，并得到每个日期的年月日
+
+        // var reg = /(\d{4})-(\d{1,2})-(\d{1,2})/g
+
+
+        // while(result=reg.exec(s)){
+        //     console.log(result)
+        // }
+
+        // 用/替换-
+        // result=s.replace(reg,function(result,g1,g2,g3){
+        //     // console.log(result,g1,g2,g3)
+        //     return `${g1}\/${g3}\/${g2}`
+        // })
+
+        // result=s.replace(reg,'$1/$2/$3')
+
+        // console.log(result)
+
+
+        //找出该字符串中连续的字符
+        // var s = "aaaaaaaabbhjikccccccdefgggggggg";
+
+        // var reg=/([a-zA-Z])\1+/g
+
+        // console.log(s.match(reg)); 
+
+        // while (result = reg.exec(s)) {
+        //     console.log(result);
+        // }
+
+        // 把数字转换成金额格式
+        // var s = "a1334353456";
+
+        // var reg = /(?=([\d]{3})+$)/g
+
+        // console.log(s.match(reg)); 
+        // console.log(reg.exec(s))
+
+        // s = s.replace(reg, function (res) {
+        //     return `,${res}`
+        // })
+        // console.log(s)
+
+        // 因为这里匹配的是非单词边界
+
+
+        // 判断密码强度
+        // 密码长度必须是6-12位
+        // 出现小写字母、大写字母、数字、特殊字符(!@#_,.)  
+        // 4-> 强
+        // 3->中
+        // 2->轻
+        // 其他  -> 不满足要求
+
+        function judgePwd(pwd) {
+            var n = 0;
+            if (pwd.length < 6 || pwd.length > 12) {
+                return '不满足要求'
+            }
+            if (/\d/g.test(pwd)) {
+                n++
+            } 
+            if (/[a-z]/g.test(pwd)) {
+                n++
+            } 
+            if (/[A-Z]/g.test(pwd)) {
+                n++
+            } 
+            if (/[!@#_,.]/g.test(pwd)) {
+                n++
+            }
+            
+            if(n<2){
+                return '不满足要求'
+            }
+            switch(n){
+                case 2:
+                return '轻';
+                case 3:
+                return '中';
+                case 4:
+                return '强';
+                default:
+                return '不满足要求';
+            }
+
+        }
+
+        
+
+    </script>
+</body>
+
+</html>
