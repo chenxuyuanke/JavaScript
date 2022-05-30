@@ -11,7 +11,7 @@
 <body>
     <script>
         var html = `
-<h2>第1章</h2>
+<h2>第1章</h2 >
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi recusandae mollitia labore dolor a repudiandae rem officia culpa. Ipsum corporis vero blanditiis nam recusandae mollitia consectetur, illo fugit placeat numquam!</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquam nobis commodi voluptas at ex, dolor eum tempora harum saepe itaque quae explicabo sint repudiandae molestiae incidunt quidem? Voluptatem, incidunt?</p>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, doloribus aliquid nobis explicabo assumenda ratione minima accusamus dignissimos perferendis in earum recusandae! Facere quas, explicabo facilis doloribus aperiam culpa esse!</p>
@@ -72,14 +72,15 @@
     <p>Provident ipsum rem accusamus nam, debitis explicabo sint perferendis? Ad, voluptatem possimus aspernatur expedita alias laudantium libero vero distinctio ea itaque quaerat officia reiciendis obcaecati incidunt, asperiores esse iusto debitis.</p>
     <p>Sunt nihil, aliquid ducimus aperiam placeat eveniet officia asperiores repudiandae beatae quae. A esse, dolore commodi et fugit distinctio ipsum perferendis, consectetur culpa illo nulla eius adipisci repellat laudantium quasi?</p>
 `;
-        var reg = /<h2>第\d+章<\/h2>/g;
+        var reg = /<h2>第\d+章<\/h2\>/g;
         var result = html.match(reg);
-        if(result){
-            console.log(result.length)
-        }
-        else{
-            console.log(0);
-        }
+        console.log(result)
+        // if(result){
+        //     console.log(result.length)
+        // }
+        // else{
+        //     console.log(0);
+        // }
     </script>
 </body>
 
